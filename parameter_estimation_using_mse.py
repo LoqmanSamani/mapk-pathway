@@ -79,9 +79,9 @@ def concentration_simulator(stimuli, raf, mek, erk, r0, r1, r2, r3, r_1, r_2, r_
     for i in range(1, len(time)):
         # rates of change
         dstimuli_dt  = -r0 * stimuli_conc[i-1]
-        draf_dt  = r0*stimuli_conc[i-1] + r_3*erk_conc[i-1] + r1*raf_conc[i-1] - r3*raf_conc[i-1]
-        dmek_dt  = r1*raf_conc[i-1] - r_2*erk_conc[i-1] - r_1*mek_conc[i-1] - r2*mek_conc[i-1]
-        derk_dt  = r3*raf_conc[i-1]-r2*mek_conc[i-1]-r_1*erk_conc[i-1]-r_3*erk_conc[i-1] - d
+        draf_dt  = r0 * stimuli_conc[i-1] + r_3 * erk_conc[i-1] + r_1 * raf_conc[i-1] - r3 * raf_conc[i-1] - r1 * raf_conc[i-1]
+        dmek_dt  = r1 * raf_conc[i-1] - r_2 * erk_conc[i-1] - r_1 * mek_conc[i-1] - r2 * mek_conc[i-1]
+        derk_dt  = r3 * raf_conc[i-1] + r2 * mek_conc[i-1] - r_2 * erk_conc[i-1] - r_3 * erk_conc[i-1] - d * erk_conc[i-1]
         
         # update the concentrations at the end of each iteration
         stimuli_conc[i] = stimuli_conc[i-1] + dstimuli_dt
@@ -176,6 +176,6 @@ def coefficient_finder(stimuli, raf, mek, erk, r0, r1, r2, r3, r_1, r_2, r_3, d,
 egf = coefficient_finder(egf_0, raf_0, mek_0, erk_0, r0, r1, r2, r3, r_1, r_2,
                        r_3, degradation, erk_conc_egf_per_sec, time_in_sec, 10000)
 
-ngf = coefficient_finder(egf_0, raf_0, mek_0, erk_0, r0, r11, r21, r31, r_11, r_21,
+ngf = coefficient_finder(ngf_0, raf_0, mek_0, erk_0, r0, r11, r21, r31, r_11, r_21,
                        r_31, degradation, erk_conc_ngf_per_sec, time_in_sec, 10000)
 
