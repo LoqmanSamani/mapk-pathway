@@ -138,17 +138,17 @@ visualization1 =pd.DataFrame({
 
 # The directories where the data will be stored
 
-file_path_egf_1 = '/home/loqman/petab_files(1)/egf/parameter.tsv'
-file_path_egf_2 = '/home/loqman/petab_files(1)/egf/ex_condition.tsv'
-file_path_egf_3 = '/home/loqman/petab_files(1)/egf/observation.tsv'
-file_path_egf_4 = '/home/loqman/petab_files(1)/egf/measurement.tsv'
-file_path_egf_5 = '/home/loqman/petab_files(1)/egf/visualization.tsv'
+file_path_egf_1 = path
+file_path_egf_2 = path
+file_path_egf_3 = path
+file_path_egf_4 = path
+file_path_egf_5 = path
 
-file_path_ngf_1 = '/home/loqman/petab_files(1)/ngf/parameter.tsv'
-file_path_ngf_2 = '/home/loqman/petab_files(1)/ngf/ex_condition.tsv'
-file_path_ngf_3 = '/home/loqman/petab_files(1)/ngf/observation.tsv'
-file_path_ngf_4 = '/home/loqman/petab_files(1)/ngf/measurement.tsv'
-file_path_ngf_5 = '/home/loqman/petab_files(1)/ngf/visualization.tsv'
+file_path_ngf_1 = path
+file_path_ngf_2 = path
+file_path_ngf_3 = path
+file_path_ngf_4 = path
+file_path_ngf_5 = path
 
 
 
@@ -211,7 +211,7 @@ for index, row in sbml_file_for_egf.iterrows():
     kinetic_law.setMath(libsbml.parseL3Formula(row['Rate law']))
     reaction.setKineticLaw(kinetic_law)
 
-file_path_egf_6 = "/home/loqman/petab_files(1)/egf/model.sbml"
+file_path_egf_6 = path
 libsbml.writeSBMLToFile(doc, file_path_egf_6)
 
 
@@ -232,7 +232,7 @@ for index, row in sbml_file_for_ngf.iterrows():
     kinetic_law1.setMath(libsbml.parseL3Formula(row['Rate law']))
     reaction1.setKineticLaw(kinetic_law)
 
-file_path_ngf_6 = "/home/loqman/petab_files(1)/ngf/model1.sbml"
+file_path_ngf_6 = path
 libsbml.writeSBMLToFile(doc, file_path_ngf_6)
 
 
@@ -248,20 +248,20 @@ libsbml.writeSBMLToFile(doc, file_path_ngf_6)
 
 
 # Defined paths to sbml and tsv files
-sbml_egf = "/home/loqman/petab_files(1)/egf/model.sbml"
-condition_egf = "/home/loqman/petab_files(1)/egf/ex_condition.tsv"
-observable_egf = "/home/loqman/petab_files(1)/egf/observation.tsv"
-parameter_egf = "/home/loqman/petab_files(1)/egf/parameter.tsv"
-measurement_egf = "/home/loqman/petab_files(1)/egf/measurement.tsv"
-visualization_egf = "/home/loqman/petab_files(1)/egf/visualization.tsv"
+sbml_egf = path
+condition_egf = path
+observable_egf = path
+parameter_egf = path
+measurement_egf = path
+visualization_egf = path
 
 
-sbml_ngf = "/home/loqman/petab_files(1)/ngf/model.sbml"
-condition_ngf = "/home/loqman/petab_files(1)/ngf/ex_condition.tsv"
-observable_ngf = "/home/loqman/petab_files(1)/ngf/observation.tsv"
-parameter_ngf = "/home/loqman/petab_files(1)/ngf/parameter.tsv"
-measurement_ngf = "/home/loqman/petab_files(1)/ngf/measurement.tsv"
-visualization_ngf = "/home/loqman/petab_files(1)/ngf/visualization.tsv"
+sbml_ngf = path
+condition_ngf = path
+observable_ngf = path
+parameter_ngf = path
+measurement_ngf = path
+visualization_ngf = path
 
 
 
@@ -324,8 +324,8 @@ petab_config_ngf = {
 
 
 # specify the output yaml files directory
-yaml_egf_path = "/home/loqman/petab_files(1)/egf/model_egf.yaml"
-yaml_ngf_path = "/home/loqman/petab_files(1)/ngf/model_ngf.yaml"
+yaml_egf_path = path
+yaml_ngf_path = path
 
 
 
