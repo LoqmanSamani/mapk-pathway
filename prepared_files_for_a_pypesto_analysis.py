@@ -1,7 +1,17 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[3]:
+
+"""
+This code generates PEtab-compatible files for both stimuli(EGF and NGF).
+It starts by defining parameter, condition, observation, measurement,
+and visualization data as pandas DataFrames for both models.
+Then, it converts these DataFrames into TSV files for each model.
+Additionally, SBML reaction information is defined using pandas DataFrames
+and converted into SBML files. Finally YAML configuration files for PEtab are created. 
+"""
+
+
+
+
 
 
 import pandas as pd
@@ -25,12 +35,12 @@ import pypesto.petab
 
 # pandas's dataframes for the first model(EGF as stimuli)
 parameter = pd.DataFrame({
-    'parameterId': ['EGF','Raf', 'Mek', 'Erk','r0', 'r1', 'r2', 'r3', 'r_1', 'r_2', 'r_3','d'],
-    'parameterScale': ['lin','lin','lin','lin','lin','lin','lin','lin','lin','lin','lin','lin'],
-    'lowerBound': [0, 0, 0, 0, 0, 0.78, 0.88, -0.02, -0.37, -0.79, -0.88, 0],
-    'upperBound': [100, 100, 100, 100,  5, 1.52, 1.10, 0.21, 0.12, -0.07, -0.32, 5],
-    'nominalValue': [None, None, None, None,None, None, None, None, None, None, None, None],
-    'estimate': [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    'parameterId': ['EGF','Raf', 'Mek', 'Erk','r0', 'r1', 'r2', 'r3', 'r_1', 'r_2', 'r_3','d','sigma'],
+    'parameterScale': ['lin','lin','lin','lin','lin','lin','lin','lin','lin','lin','lin','lin','lin'],
+    'lowerBound': [0, 0, 0, 0, 0, 0.78, 0.88, -0.02, -0.37, -0.79, -0.88, 0,0.01],
+    'upperBound': [100, 100, 100, 100,  5, 1.52, 1.10, 0.21, 0.12, -0.07, -0.32, 5,0.1],
+    'nominalValue': [None, None, None, None,None, None, None, None, None, None, None, None, None],
+    'estimate': [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
 })
 
 
@@ -47,8 +57,8 @@ observation = pd.DataFrame({
     'observableFormula': ['r0*EGF', 'r0*EGF + r_3*Erk + r_1*Mek - r3*Raf - r1*Raf',
                           'r1*Raf + r_2*Erk - r_1*Mek - r2*Mek',
                           'r3*Raf + r2*Mek - r_2*Erk - r_3*Erk - d*Erk'],
-    'noiseFormula': [None, None, None, None],
-    'noiseDistribution': [None, None, None, None]
+    'noiseFormula': ['sigma', 'sigma' , 'sigma', 'sigma'],
+    'noiseDistribution': ['normal', 'normal', 'normal', 'normal']
 })
 
 
@@ -102,8 +112,8 @@ observation1 = pd.DataFrame({
     'observableFormula': ['r0*NGF', 'r0*EGF + r_3*Erk + r_1*Mek - r3*Raf - r1*Raf',
                           'r1*Raf + r_2*Erk - r_1*Mek - r2*Mek',
                           'r3*Raf + r2*Mek - r_2*Erk - r_3*Erk - d*Erk'],
-    'noiseFormula': [None, None, None, None],
-    'noiseDistribution': [None, None, None, None]
+    'noiseFormula': ['sigma', 'sigma' , 'sigma', 'sigma'],
+    'noiseDistribution': ['normal', 'normal', 'normal', 'normal']
 })
 
 
@@ -138,17 +148,17 @@ visualization1 =pd.DataFrame({
 
 # The directories where the data will be stored
 
-file_path_egf_1 = path
-file_path_egf_2 = path
-file_path_egf_3 = path
-file_path_egf_4 = path
-file_path_egf_5 = path
+file_path_egf_1 = "/home/loqman/petab_files(1)/egf/parameter.tsv"
+file_path_egf_2 = "/home/loqman/petab_files(1)/egf/ex_condition.tsv"
+file_path_egf_3 = "/home/loqman/petab_files(1)/egf/observation.tsv"
+file_path_egf_4 = "/home/loqman/petab_files(1)/egf/measurement.tsv"
+file_path_egf_5 = "/home/loqman/petab_files(1)/egf/visualization.tsv"
 
-file_path_ngf_1 = path
-file_path_ngf_2 = path
-file_path_ngf_3 = path
-file_path_ngf_4 = path
-file_path_ngf_5 = path
+file_path_ngf_1 = "/home/loqman/petab_files(1)/ngf/parameter.tsv"
+file_path_ngf_2 = "/home/loqman/petab_files(1)/ngf/ex_condition.tsv"
+file_path_ngf_3 = "/home/loqman/petab_files(1)/ngf/observation.tsv"
+file_path_ngf_4 = "/home/loqman/petab_files(1)/ngf/measurement.tsv"
+file_path_ngf_5 = "/home/loqman/petab_files(1)/ngf/visualization.tsv"
 
 
 
@@ -173,8 +183,8 @@ visualization.to_csv(file_path_ngf_5, sep='\t', index=False)
 
 sbml_file_for_egf = pd.DataFrame({
     'ID': ['R1', 'R2', 'R3', 'R4', 'R5','R6','R7', 'R8'],
-    'Reaction': ['EGF->Raf', 'Raf->Mek', 'Mek->Raf', 'Mek->Erk', 'Erk->Mek',
-                 'Raf->Erk', 'Erk->Raf', 'Erk->'],
+    'Reaction': ['EGF -> Raf', 'Raf -> Mek', 'Mek -> Raf', 'Mek -> Erk', 'Erk -> Mek',
+                 'Raf -> Erk', 'Erk -> Raf', 'Erk ->'],
     'Rate law': ['r0 * EGF', 'r1 * Raf', 'r_1 * Mek', 'r2 * Mek', 'r_2 * Erk',
                  'r3 * Raf', 'r_3 * Erk', 'd * Erk']
 })
@@ -183,8 +193,8 @@ sbml_file_for_egf = pd.DataFrame({
 
 sbml_file_for_ngf = pd.DataFrame({
     'ID': ['R1', 'R2', 'R3', 'R4', 'R5','R6','R7', 'R8'],
-    'Reaction': ['NGF->Raf', 'Raf->Mek', 'Mek->Raf', 'Mek->Erk', 'Erk->Mek',
-                 'Raf->Erk', 'Erk->Raf', 'Erk->'],
+    'Reaction': ['NGF -> Raf', 'Raf -> Mek', 'Mek -> Raf', 'Mek -> Erk', 'Erk -> Mek',
+                 'Raf -> Erk', 'Erk -> Raf', 'Erk ->'],
     'Rate law': ['r0 * EGF', 'r1 * Raf', 'r_1 * Mek', 'r2 * Mek', 'r_2 * Erk',
                  'r3 * Raf', 'r_3 * Erk', 'd * Erk']
 })
@@ -211,7 +221,7 @@ for index, row in sbml_file_for_egf.iterrows():
     kinetic_law.setMath(libsbml.parseL3Formula(row['Rate law']))
     reaction.setKineticLaw(kinetic_law)
 
-file_path_egf_6 = path
+file_path_egf_6 = "/home/loqman/petab_files(1)/egf/model.sbml"
 libsbml.writeSBMLToFile(doc, file_path_egf_6)
 
 
@@ -232,7 +242,7 @@ for index, row in sbml_file_for_ngf.iterrows():
     kinetic_law1.setMath(libsbml.parseL3Formula(row['Rate law']))
     reaction1.setKineticLaw(kinetic_law)
 
-file_path_ngf_6 = path
+file_path_ngf_6 = "/home/loqman/petab_files(1)/ngf/model.sbml"
 libsbml.writeSBMLToFile(doc, file_path_ngf_6)
 
 
@@ -248,20 +258,20 @@ libsbml.writeSBMLToFile(doc, file_path_ngf_6)
 
 
 # Defined paths to sbml and tsv files
-sbml_egf = path
-condition_egf = path
-observable_egf = path
-parameter_egf = path
-measurement_egf = path
-visualization_egf = path
+sbml_egf = "/home/loqman/petab_files(1)/egf/model.sbml"
+condition_egf =  "/home/loqman/petab_files(1)/egf/ex_condition.tsv"
+observable_egf =  "/home/loqman/petab_files(1)/egf/observation.tsv"
+parameter_egf =  "/home/loqman/petab_files(1)/egf/parameter.tsv"
+measurement_egf =  "/home/loqman/petab_files(1)/egf/measurement.tsv"
+visualization_egf =  "/home/loqman/petab_files(1)/egf/visualization.tsv"
 
 
-sbml_ngf = path
-condition_ngf = path
-observable_ngf = path
-parameter_ngf = path
-measurement_ngf = path
-visualization_ngf = path
+sbml_ngf =  "/home/loqman/petab_files(1)/ngf/model.sbml"
+condition_ngf =  "/home/loqman/petab_files(1)/ngf/ex_condition.tsv"
+observable_ngf =  "/home/loqman/petab_files(1)/ngf/observation.tsv"
+parameter_ngf =  "/home/loqman/petab_files(1)/ngf/parameter.tsv"
+measurement_ngf =  "/home/loqman/petab_files(1)/ngf/measurement.tsv"
+visualization_ngf =  "/home/loqman/petab_files(1)/ngf/visualization.tsv"
 
 
 
@@ -324,8 +334,8 @@ petab_config_ngf = {
 
 
 # specify the output yaml files directory
-yaml_egf_path = path
-yaml_ngf_path = path
+yaml_egf_path = "/home/loqman/petab_files(1)/egf/egf_model.yaml"
+yaml_ngf_path = "/home/loqman/petab_files(1)/ngf/ngf_model.yaml"
 
 
 
