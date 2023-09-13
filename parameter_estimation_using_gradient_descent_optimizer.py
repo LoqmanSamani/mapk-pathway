@@ -1,7 +1,58 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[ ]:
+
+"""
+This code efficiently estimates coefficients by using 
+gradient-based optimization and early stopping, making it a
+more practical and less computationally intensive solution 
+compared to the "parameter_estimation_using_mse.py".
+
+1) Class-Based Structure:
+
+The code is organized into a class calledCoefficientFinder,
+enhancing modularity and readability.
+
+2) Initialization:
+
+The constructor (__init__) takes input parameters
+andhyperparametersfor coefficient estimation.
+
+3) Concentration Simulation:
+
+The concentration_simulator method models the change
+in concentrations of species over time based on given
+coefficients and initial conditions.
+
+4) MSE Calculator:
+
+The mse_calculator method computes the Mean Squared Error (MSE)
+between simulated and experimental data.
+
+5) Gradient Descent:
+
+The gradient_descent method employs gradient descent to 
+optimize coefficients (d and r0) to minimize MSE.
+
+6) Early Stopping:
+
+The code includes early stopping to terminate optimization
+when MSE change is below a threshold.
+
+7) Improved Parameter Initialization:
+
+Coefficients d and r0 are initialized with
+reasonable values before optimization.
+
+8) Results and Population Tracking:
+
+The gradient_descent method tracks MSE, optimized coefficients,
+and population concentrations.
+"""
+
+
+
+
+
+
 
 
 import numpy as np
@@ -121,8 +172,5 @@ model = CoefficientFinder(erk_conc, num_iter, *params)
 
 d, r0, mse, pops = model.gradient_descent()
 
-print(d)
-print(r0)
-print(mse)
-print(pops)
+
 
