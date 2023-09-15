@@ -9,6 +9,6 @@ problems:
   observable_files:
   - observation.tsv
   sbml_files:
-  - model.sbml
+  - model.xml
   visualization_files:
   - visualization.tsv
