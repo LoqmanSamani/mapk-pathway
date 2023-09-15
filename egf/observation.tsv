@@ -1,0 +1,5 @@
+observableId	observableFormula	noiseFormula	noiseDistribution
+EGF	-r0*EGF_stimuli	sigma	normal
+Raf	(r0*EGF_stimuli)+(r_3*Erk_kinase)+(r_1*Mek_kinase)-(r3*Raf_kinase)-(r1*Raf_kinase)	sigma	normal
+Mek	(r1*Raf_kinase)+(r_2*Erk_kinase)- (r_1*Mek_kinase) - (r2*Mek_kinase)	sigma	normal
+Erk	(r3*Raf_kinase) + (r2*Mek_kinase) - (r_2*Erk_kinase) - (r_3*Erk_kinase)- (d*Erk_kinase)	sigma	normal
