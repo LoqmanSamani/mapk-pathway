@@ -1,0 +1,14 @@
+format_version: 1.0.0
+parameter_file:
+- /home/loqman/petab_files(1)/ngf/parameter.tsv
+problems:
+- condition_files:
+  - /home/loqman/petab_files(1)/ngf/ex_condition.tsv
+  measurement_files:
+  - /home/loqman/petab_files(1)/ngf/measurement.tsv
+  observable_files:
+  - /home/loqman/petab_files(1)/ngf/observation.tsv
+  sbml_files:
+  - /home/loqman/petab_files(1)/ngf/model.sbml
+  visualization_files:
+  - /home/loqman/petab_files(1)/ngf/visualization.tsv

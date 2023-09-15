@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model>
+    <listOfSpecies>
+      <species id="EGF" initialAmount="0"/>
+      <species id="Raf" initialAmount="0"/>
+      <species id="Mek" initialAmount="0"/>
+      <species id="Erk" initialAmount="0"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="R1" name="EGF -&gt; Raf">
+        <listOfReactants>
+          <speciesReference species="EGF"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r0 </ci>
+              <ci> EGF </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R2" name="Raf -&gt; Mek">
+        <listOfReactants>
+          <speciesReference species="Raf"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Mek"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r1 </ci>
+              <ci> Raf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R3" name="Mek -&gt; Raf">
+        <listOfReactants>
+          <speciesReference species="Mek"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r_1 </ci>
+              <ci> Mek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R4" name="Mek -&gt; Erk">
+        <listOfReactants>
+          <speciesReference species="Mek"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Erk"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r2 </ci>
+              <ci> Mek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R5" name="Erk -&gt; Mek">
+        <listOfReactants>
+          <speciesReference species="Erk"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Mek"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r_2 </ci>
+              <ci> Erk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R6" name="Raf -&gt; Erk">
+        <listOfReactants>
+          <speciesReference species="Raf"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Erk"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r3 </ci>
+              <ci> Raf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R7" name="Erk -&gt; Raf">
+        <listOfReactants>
+          <speciesReference species="Erk"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> r_3 </ci>
+              <ci> Erk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="R8" name="Erk -&gt;">
+        <listOfReactants>
+          <speciesReference species="Erk"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> d </ci>
+              <ci> Erk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

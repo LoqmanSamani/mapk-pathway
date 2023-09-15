@@ -1,0 +1,11 @@
+observableId	simulationConditionId	measurement	time	noiseParameters
+EGF	EGF_stimulation	100.0	0	
+Erk	EGF_stimulation	0.0	0	
+Erk	EGF_stimulation	0.7	100	
+Erk	EGF_stimulation	1.0	280	
+Erk	EGF_stimulation	0.41	420	
+Erk	EGF_stimulation	0.1	600	
+Erk	EGF_stimulation	0.03	840	
+Erk	EGF_stimulation	0.01	1800	
+Erk	EGF_stimulation	0.01	2400	
+Erk	EGF_stimulation	0.01	3000	
