@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 """
 Error propagation in MRA estimated by Monte Carlo simulations.

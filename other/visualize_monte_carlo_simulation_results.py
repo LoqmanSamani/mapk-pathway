@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 # Plot(in form of histograms) the results of the monte carlo simulations
 
