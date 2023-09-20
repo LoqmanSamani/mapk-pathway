@@ -44,8 +44,8 @@ new approach, which utilizes the "petab" and "pypesto"
 |                           |                                                                                                  |
 | `petab_&_pypesto`         | This folder contains PEtab and PyPESTO-related files.                                           |
 |   └── `egf_files`         | Subfolder containing EGF-related files.                                                          |
-|   |     └──  `codes`      | Subfolder containing EGF-related code files.                                                     |
-|   |     └──  `files`      | Subfolder containing EGF-related data and other files.                                           |
+|        └──  `codes`       | Subfolder containing EGF-related code files.                                                     |
+|        └──  `files`       | Subfolder containing EGF-related data and other files.                                           |
 |   └── `ngf_files`         | Subfolder containing NGF-related files.                                                          |
 |       └──  `codes`        | Subfolder containing NGF-related code files.                                                     |
 |       └──  `files`        | Subfolder containing NGF-related data and other files.                                           |
