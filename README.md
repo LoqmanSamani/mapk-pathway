@@ -23,10 +23,10 @@ developed by Kholodenko et al., and a novel approach
 
 Folder Structure
 ------------------------------------------------
-• other/: Contains files and materials related to 
+• additional_resources : Contains files and materials related to 
 replicating the original study using the MRA approach,
  mirroring the methodology presented in the 2007 paper.
- • petab_&_pypesto/: This folder is dedicated to our 
+ • petab_&_pypesto : This folder is dedicated to our 
 new approach, which utilizes the "petab" and "pypesto"
  tools. We have developed Python code to replicate the
  study's findings using this modern framework.
@@ -35,9 +35,9 @@ new approach, which utilizes the "petab" and "pypesto"
 
 | Folder Structure          | Description                                                                                     |
 | ------------------------- | ----------------------------------------------------------------------------------------------- |
-| `other`                   | This folder contains files that reproduce the same work as the original paper.                 |
-|   └── `codes`             | Subfolder containing code files related to the work in the `other` folder.                    |
-|   └── `plots`             | Subfolder containing plot files related to the work in the `other` folder.                    |
+| `additional_resources`    | This folder contains files that reproduce the same work as the original paper.                 |
+|   └── `codes`             | Subfolder containing code files related to the work in the `additional_resources` folder.       |
+|   └── `plots`             | Subfolder containing plot files related to the work in the `codes` folder.                      |
 |                           |                                                                                                  |
 | `petab_&_pypesto`         | This folder contains PEtab and PyPESTO-related files.                                           |
 |   └── `egf_files`         | Subfolder containing EGF-related files.                                                          |
