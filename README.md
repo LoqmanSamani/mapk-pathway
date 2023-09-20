@@ -32,5 +32,19 @@ new approach, which utilizes the "petab" and "pypesto"
  study's findings using this modern framework.
 
 
-To be continued...
+
+
+| Folder Structure               | Description                                               |
+| ------------------------------ | --------------------------------------------------------- |
+| `other/`                       | Main folder containing additional resources.              |
+|   └── `codes/`                 | Subfolder containing code files.                         |
+|   └── `plots/`                 | Subfolder containing plot files.                         |
+|                                |                                                           |
+| `petab_&_pypesto/`             | Main folder containing PEtab and PyPESTO-related files.  |
+|   └── `egf_files/`             | Subfolder containing EGFR-related PEtab files.          |
+|   |    ├── ...                | Subfolders and files specific to EGFR.                   |
+|   |                                                          |
+|   └── `ngf_files/`             | Subfolder containing NGF-related PEtab files.           |
+|        ├── ...                | Subfolders and files specific to NGF.                    |
+
 
