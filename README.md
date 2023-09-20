@@ -33,18 +33,18 @@ new approach, which utilizes the "petab" and "pypesto"
 
 
 
-
-| Folder Structure               | Description                                               |
-| ------------------------------ | --------------------------------------------------------- |
-| `other/`                       | Main folder containing additional resources.              |
-|   └── `codes/`                 | Subfolder containing code files.                         |
-|   └── `plots/`                 | Subfolder containing plot files.                         |
-|                                |                                                           |
-| `petab_&_pypesto/`             | Main folder containing PEtab and PyPESTO-related files.  |
-|   └── `egf_files/`             | Subfolder containing EGFR-related PEtab files.          |
-|   |    ├── ...                | Subfolders and files specific to EGFR.                   |
-|   |                                                          |
-|   └── `ngf_files/`             | Subfolder containing NGF-related PEtab files.           |
-|        ├── ...                | Subfolders and files specific to NGF.                    |
+| Folder Structure          | Description                                                                                     |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| `other`                   | This folder contains files that reproduce the same work as the original paper.                 |
+|   └── `codes`             | Subfolder containing code files related to the work in the `other` folder.                    |
+|   └── `plots`             | Subfolder containing plot files related to the work in the `other` folder.                    |
+|                           |                                                                                                  |
+| `petab_&_pypesto`         | This folder contains PEtab and PyPESTO-related files.                                           |
+|   └── `egf_files`         | Subfolder containing EGF-related files.                                                          |
+|   |     └──  `codes`      | Subfolder containing EGF-related code files.                                                     |
+|   |     └──  `files`      | Subfolder containing EGF-related data and other files.                                           |
+|   └── `ngf_files`         | Subfolder containing NGF-related files.                                                          |
+|       └──  `codes`        | Subfolder containing NGF-related code files.                                                     |
+|       └──  `files`        | Subfolder containing NGF-related data and other files.                                           |
 
 
