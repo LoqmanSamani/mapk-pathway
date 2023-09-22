@@ -19,7 +19,7 @@ visualization_ngf_file = "visualization.tsv"
 
 
 # Specify the output directory for the YAML files
-output_directory = "/home/loqman/petab_files(1)/"
+output_directory = ".../"
 
 
 

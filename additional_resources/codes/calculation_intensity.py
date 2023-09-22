@@ -59,20 +59,41 @@ def calculation_time(shapes):
             
     return times
 
+
 # shape of the matric, which will be used in calculation
-shapes = [i for i in range(1000)]
+
+shapes = [i for i in range(0, 5005, 5)]
+
+
+
 
 # save the calculation times in a list
+
 simulation_time = calculation_time(shapes)
 
-        
-# plot the results    
-plt.plot(shapes, simulation_time)
-plt.title("Simulation Time vs. Matrix Size")
-plt.xlabel('Matrix Size')
-plt.ylabel('Time (milliseconds)')
-plt.show()
 
+
+
+        
+# plot the results 
+   
+plt.figure(figsize=(10, 7))
+plt.style.use('dark_background')
+
+plt.plot(shapes, simulation_time) 
+
+
+plt.xlabel('Shape of the Matrix', fontsize=12)
+plt.ylabel('Simulation Time (millisecond)', fontsize=12)
+plt.title('Shape of the Matrix vs. Simulation Time', fontsize=16)
+
+
+# save the result in a pdf format
+plt.savefig('simulation_time.pdf', format='pdf')
+
+
+plt.show()
+        
 
 
 

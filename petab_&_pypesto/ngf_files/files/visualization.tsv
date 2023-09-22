@@ -1,2 +1,2 @@
 plotId	plotTypeData	xLabel	yValues	yLabel
-plot_1	MeanAndSD	Time(sec)	Erk	ppERK
+plot_1	MeanAndSD	Time(second)	Erk_1	ppErk

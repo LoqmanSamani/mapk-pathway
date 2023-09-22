@@ -83,11 +83,11 @@ visualization =pd.DataFrame({
 
 # The directories where the data will be stored
 
-file_path_egf_1 = "/home/loqman/petab_files(1)/egf/parameter.tsv"
-file_path_egf_2 = "/home/loqman/petab_files(1)/egf/experimental_condition.tsv"
-file_path_egf_3 = "/home/loqman/petab_files(1)/egf/observation.tsv"
-file_path_egf_4 = "/home/loqman/petab_files(1)/egf/measurement.tsv"
-file_path_egf_5 = "/home/loqman/petab_files(1)/egf/visualization.tsv"
+file_path_egf_1 = ".../parameter.tsv"
+file_path_egf_2 = ".../experimental_condition.tsv"
+file_path_egf_3 = ".../observables.tsv"
+file_path_egf_4 = "...measurement.tsv"
+file_path_egf_5 = "...visualization.tsv"
 
 
 # Convert pandas dataframes to tsv files with tab separator

@@ -10,7 +10,7 @@ visualization_egf_file = "visualization.tsv"
 
 
 # Specify the output directory for the YAML file
-output_directory = "/home/loqman/petab_files(1)/"
+output_directory = ".../"
 
 
 # Create petab problem

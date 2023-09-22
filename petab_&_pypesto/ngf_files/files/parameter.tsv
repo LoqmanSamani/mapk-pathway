@@ -1,11 +1,10 @@
 parameterId	parameterScale	lowerBound	upperBound	nominalValue	estimate
-EGF_stimuli	lin	0.0	1.0	1.0	1
-r0	lin	0.0	5.0	1.0	0
-r1	lin	0.78	1.52	1.0	1
-r2	lin	0.88	1.1	1.0	1
-r3	lin	-0.02	0.21	1.0	1
-r_1	lin	-0.37	0.12	1.0	1
-r_2	lin	-0.79	-0.07	1.0	1
-r_3	lin	-0.88	-0.32	1.0	1
-d	lin	0.0	5.0	1.0	0
-sigma	lin	0.01	0.1	0.01	0
+r0	lin	-1000.0	1000.0		1
+r1	lin	2.97	9.11	6.18	0
+r2	lin	0.2	0.98	0.63	0
+r3	lin	0.69	1.43	0.96	0
+r_1	lin	-0.27	-0.07	-0.17	0
+r_2	lin	-5.85	-1.59	-3.73	0
+r_3	lin	0.31	0.43	0.4	0
+d	lin	-1000.0	1000.0		1
+sigma	lin	-1000.0	1000.0		1

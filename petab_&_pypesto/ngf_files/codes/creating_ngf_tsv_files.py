@@ -78,21 +78,21 @@ visualization =pd.DataFrame({
 
 # The directories where the data will be stored
 
-file_path_egf_1 = "/home/loqman/petab_files(1)/ngf/parameter.tsv"
-file_path_egf_2 = "/home/loqman/petab_files(1)/ngf/experimental_condition.tsv"
-file_path_egf_3 = "/home/loqman/petab_files(1)/ngf/observables.tsv"
-file_path_egf_4 = "/home/loqman/petab_files(1)/ngf/measurement.tsv"
-file_path_egf_5 = "/home/loqman/petab_files(1)/ngf/visualization.tsv"
+file_path_ngf_1 = ".../parameter.tsv"
+file_path_ngf_2 = ".../experimental_condition.tsv"
+file_path_ngf_3 = ".../observables.tsv"
+file_path_ngf_4 = ".../measurement.tsv"
+file_path_ngf_5 = ".../visualization.tsv"
 
 
 
 # Convert pandas dataframes to tsv files with tab separator
 
-parameter.to_csv(file_path_egf_1,   sep='\t',  index=False)
-experimental_condition.to_csv(file_path_egf_2,  sep='\t',index=False)
-observables.to_csv(file_path_egf_3,  sep='\t', index=False)
-measurement.to_csv(file_path_egf_4,  sep='\t', index=False)
-visualization.to_csv(file_path_egf_5, sep='\t',index=False)
+parameter.to_csv(file_path_ngf_1,   sep='\t',  index=False)
+experimental_condition.to_csv(file_path_ngf_2,  sep='\t',index=False)
+observables.to_csv(file_path_ngf_3,  sep='\t', index=False)
+measurement.to_csv(file_path_ngf_4,  sep='\t', index=False)
+visualization.to_csv(file_path_ngf_5, sep='\t',index=False)
 
    
 

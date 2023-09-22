@@ -16,16 +16,16 @@ from pypesto.visualize.model_fit import visualize_optimized_model_fit
 
 
 # Specify the path to the existing YAML file
-yaml_egf_path = path
+yaml_ngf_path = "..."
 
 
 # Load the existing YAML file to create a petab problem
-petab_problem_egf = petab.Problem.from_yaml(yaml_egf_path)
+petab_problem_ngf = petab.Problem.from_yaml(yaml_ngf_path)
 
 
 
 # Import the model to pyPESTO and AMICI.
-importer = pypesto.petab.PetabImporter(petab_problem_egf)
+importer = pypesto.petab.PetabImporter(petab_problem_ngf)
 model = importer.create_model()
 
 
@@ -41,15 +41,15 @@ Output:
 
 Model parameters: ['r0', 'd', 'sigma'] 
 Model const parameters: ['r1', 'r_1', 'r2', 'r_2', 'r3', 'r_3'] 
-Model outputs:  ['EGF_1', 'Raf_1', 'Mek_1', 'Erk_1'] 
-Model states:  ['EGF', 'Raf', 'Mek', 'Erk'] 
+Model outputs:  ['NGF_1', 'Raf_1', 'Mek_1', 'Erk_1'] 
+Model states:  ['NGF', 'Raf', 'Mek', 'Erk'] 
 """
 
 
 
 # Create an objective function to integrate the model, data, and noise 
 converter_config = libsbml.SBMLLocalParameterConverter().getDefaultProperties()
-petab_problem_egf.sbml_document.convert(converter_config)
+petab_problem_ngf.sbml_document.convert(converter_config)
 
 obj = importer.create_objective()
 
@@ -131,8 +131,8 @@ they increased computational demands without commensurate gains in model accurac
 
 
 # The standard pypesto plotting 
-ref = visualize.create_references(x=petab_problem_egf.x_nominal_scaled,
-                                  fval=obj(petab_problem_egf.x_nominal_scaled))
+ref = visualize.create_references(x=petab_problem_ngf.x_nominal_scaled,
+                                  fval=obj(petab_problem_ngf.x_nominal_scaled))
 
 #visualize.waterfall(result, reference=ref, scale_y="lin")
 #visualize.parameters(result, reference=ref)
@@ -140,10 +140,7 @@ ref = visualize.create_references(x=petab_problem_egf.x_nominal_scaled,
 
 
 # visualize the model fit
-visualize_optimized_model_fit(petab_problem=petab_problem_egf, result=result, pypesto_problem=problem)
-
-
-
+visualize_optimized_model_fit(petab_problem=petab_problem_ngf, result=result, pypesto_problem=problem)
 
 
 
