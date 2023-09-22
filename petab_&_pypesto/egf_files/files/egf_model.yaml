@@ -7,7 +7,7 @@ problems:
   measurement_files:
   - measurement.tsv
   observable_files:
-  - observbles.tsv
+  - observables.tsv
   sbml_files:
   - egf_model.xml
   visualization_files:
