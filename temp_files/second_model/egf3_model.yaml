@@ -1,0 +1,14 @@
+format_version: 1.0.0
+parameter_file:
+- /home/loqman/petab_files(1)/egf3/parameter33.tsv
+problems:
+- condition_files:
+  - /home/loqman/petab_files(1)/egf3/experimental_condition33.tsv
+  measurement_files:
+  - /home/loqman/petab_files(1)/egf3/measurement33.tsv
+  observable_files:
+  - /home/loqman/petab_files(1)/egf3/observables33.tsv
+  sbml_files:
+  - /home/loqman/petab_files(1)/egf3/egf_model33.xml
+  visualization_files:
+  - /home/loqman/petab_files(1)/egf3/visualization33.tsv
