@@ -23,9 +23,9 @@ developed by Kholodenko et al., and a novel approach
 
 Folder Structure
 ------------------------------------------------
-• additional_resources : Contains files and materials related to 
-replicating the original study using the MRA approach,
- mirroring the methodology presented in the 2007 paper.
+• - Additional_resources : Contains files and materials related to the
+replication of the original study using the MRA approach.
+(some results may not match those of the study due to the use of different statistical methods)
 
 
 
