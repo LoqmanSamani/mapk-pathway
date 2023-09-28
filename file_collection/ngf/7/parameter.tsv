@@ -1,0 +1,10 @@
+parameterId	parameterScale	lowerBound	upperBound	nominalValue	estimate
+r0	lin	-10	10		1
+r1	lin	-10	10	6.18	0
+r2	lin	-10	10	0.63	0
+r3	lin	-10	10	0.96	0
+r_1	lin	-10	10	-0.17	0
+r_2	lin	-10	10	-3.73	0
+r_3	lin	-10	10	0.4	0
+r4	lin	-10	10		1
+sigma	lin	0	1		1
