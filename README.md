@@ -23,7 +23,7 @@ developed by Kholodenko et al., and a novel approach
 
 Folder Structure
 ------------------------------------------------
-• Additional_resources : Contains files and materials related to
+• additional_resources : Contains files and materials related to
 the replication of the original study using the MRA approach.
 (some results may not match those of the study due to the use of different statistical methods)
 
@@ -33,6 +33,10 @@ the replication of the original study using the MRA approach.
 new approach, which utilizes the "petab" and "pypesto"
  tools. We have developed Python code to replicate the
  study's findings using this modern framework.
+
+• file_collection: a collection of different datasets for both stimuli(NGF and EGF),
+  each with all necessary files (.tsv & .yaml) that can be used to estimate unknown
+  parameters with the pypesto package.   can you improve this text
 
 
 
@@ -49,8 +53,9 @@ new approach, which utilizes the "petab" and "pypesto"
 |   └── `ngf_files`         | Subfolder containing NGF-related files.                                                          |
 |       └──  `codes`        | Subfolder containing NGF-related code files.                                                     |
 |       └──  `files`        | Subfolder containing NGF-related data and other files.                                           |
-
-
+| `file_collection`         | This folder contains a collection of datasets, which can be used to estimate unknown parametrs    |
+|    └── `ngf`              | Subfolder containing NGF-related files.                                                          |
+|    └── `egf`              | Subfolder containing NGF-related files.                                                         |
 --------------------------------------------------------------------------------------------------------------------------------
 
 ## Copyright and Permissions
