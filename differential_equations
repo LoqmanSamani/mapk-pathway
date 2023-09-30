@@ -171,11 +171,16 @@
 
 
 
-------------------------------------------------------
-We  can  certainly  extend the model  in  various ways 
-(e.g., define degradation equations for each protein),
-but we think that this is not  necessary for our study
-and is beyond the scope of our work!
+-----------------------------------------------------------------------------------
+Each  model can be used for both stimuli - NGF and EGF - as they stimulate the same
+signaling pathway. For each model, we have prepared (for both stimuli) 10 different
+data  sets (.tsv and .yaml files),  with different  parameter  ranges  in each case
+(They can be found in the file_collection folder),  which  can be  used to estimate
+the parameters with pypesto package.
+
+We can of course extend the model in various ways (e.g., define degradation
+equations  for each protein),  but we think that this  is not necessary for 
+our study and would be beyond the scope of our work!
 
 
 Loghman Samani 
