@@ -1,6 +1,6 @@
 
 
-1) Differential equation model (which define just one state for each protein)
+1) Differential equation model (which defines only one state for each protein).
 
 
 
@@ -90,8 +90,9 @@
 
         R7: pErk       -> pRaf + Erk            r_3 * pErk * pRaf         dpErk/dt = (r2 * Erk * pMek) + (r3 * Erk * pRaf) - (r_3 * pErk)
         
-        ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        ## The logic of the model is correct! but it does not define a degradation equation for pErk, nor does it define an equation for the inverse of the R1 equation!
+        ---------------------------------------------------------------------------------------------
+        ## The logic of the model is correct! but it does not define a degradation equation for pErk,
+           nor does it define an equation for the inverse of the R1 equation!
 
 
 
@@ -99,12 +100,12 @@
 
 
 
-
-                                                **THE THIRD MODEL**
-        ----------------------------------------------------------------------------------------------------------------
+        
+                                                **THE FORTH MODEL**
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                      **RATE EQUATIONS**         **RATE OF CHANGE**
-        -----------------------------------------------------------------------------------------------------------------
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         R1: EGF  + Raf -> pRaf                  r0  * EGF  * Raf          dEGF/dt  = (r_0 * pRaf) - (r0 * EGF * Raf) 
         
@@ -121,9 +122,50 @@
         R7: pRaf + Erk -> pErk                  r3  * pRaf * Erk          dpMek/dt = (r1 * Mek * pRaf) + (r_2 * pErk)      - (r_1 * pMek)      - (r2 * pMek * Erk)
 
         R8: pErk       -> pRaf + Erk            r_3 * pErk * pRaf         dpErk/dt = (r2 * Erk * pMek) + (r3 * Erk * pRaf) - (r_3 * pErk)
+        
+                          
 
-       ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
-       #### This model is more complete than the others, the only problem with this model is that it defines an inverse equation for R1 (since EGF is a stimulus, it cannot be affected by the pathway proteins)!
+       ---------------------------------------------------------------------------------------------------------- 
+       ## This model adds an equation for the inverse of reaction R1.
+          
+
+
+
+
+
+
+
+                                                **THE FORTH MODEL**
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+             **REACTIONS**                      **RATE EQUATIONS**         **RATE OF CHANGE**
+        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        R1: EGF  + Raf -> pRaf                  r0  * EGF  * Raf          dEGF/dt  = (r_0 * pRaf) - (r0 * EGF * Raf) 
+        
+        R2 : pRaf      -> EGF + Raf             r_0 * pRaf
+          
+        R3: pRaf + Mek -> pMek                  r1  * pRaf * Mek          dRaf/dt  = (r_0 * pRaf) - (r0 * EGF * Raf)
+
+        R4: pMek       -> pRaf + Mek            r_1 * pMek * pRaf         dMek/dt  = (r_1 * pMek)      - (r1 * Mek * pRaf)
+
+        R5: pMek + Erk -> pErk                  r2  * pMek * Erk          dErk/dt  = (r_2 * pErk)      + (r_3 * pErk)      - (r2 * Erk * pMek) - (r3 * Erk * pRaf)
+ 
+        R6: pErk       -> pMek + Erk            r_2 * pErk * pMek         dpRaf/dt = (r0 * Egf * Raf)  + (r_1 * pMek)      + (r_3 * pErk)      - (r1 * Mek * pRaf) - (r3 * Erk * pRaf)  - (r_0 * pRaf)
+
+        R7: pRaf + Erk -> pErk                  r3  * pRaf * Erk          dpMek/dt = (r1 * Mek * pRaf) + (r_2 * pErk)      - (r_1 * pMek)      - (r2 * pMek * Erk)
+
+        R8: pErk       -> pRaf + Erk            r_3 * pErk * pRaf         dpErk/dt = (r2 * Erk * pMek) + (r3 * Erk * pRaf) - (r_3 * pErk) - (d * pErk)
+        
+        R9: pErk       -> NaN (degradation)     d * pErk                  
+
+       ---------------------------------------------------------------------------------------------------------- 
+       ## This model is more complete than the others, it defines a degradation equation for pErk (why not Erk!).
+          The only problem with this model is that it has an inverse equation for R1
+         (since EGF is a stimulus, it may not be affected by the pathway proteins)!
+
+
+
 
 
 
@@ -138,12 +180,6 @@ and is beyond the scope of our work!
 
 Loghman Samani 
 30.September.2023
-
-
-
-
-
-
 
 
         
