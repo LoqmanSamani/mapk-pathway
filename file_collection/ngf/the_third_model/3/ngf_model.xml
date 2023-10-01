@@ -17,9 +17,9 @@
     <listOfParameters>
       <parameter id="r0" value="1" constant="true"/>
       <parameter id="r1" value="6.18" constant="true"/>
-      <parameter id="r_1" value="-0.17" constant="true"/>
+      <parameter id="r_1" value="0.17" constant="true"/>
       <parameter id="r2" value="0.63" constant="true"/>
-      <parameter id="r_2" value="-3.73" constant="true"/>
+      <parameter id="r_2" value="3.73" constant="true"/>
       <parameter id="r3" value="0.96" constant="true"/>
       <parameter id="r_3" value="0.4" constant="true"/>
       <parameter id="sigma" value="1" constant="true"/>
