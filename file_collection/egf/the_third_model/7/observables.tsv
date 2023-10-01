@@ -1,7 +1,7 @@
 observableId	observableFormula	noiseFormula	noiseDistribution
 EGF_1	-r0 * EGF * Raf 	sigma	normal
 Raf_1	-r0 * EGF * Raf	sigma	normal
-pRaf_1	(r0 * Egf * Raf)+(r_1 * pMek)+(r_3 * pErk)-(r1 * Mek * pRaf)-(r3 * Erk * pRaf)	sigma	normal
+pRaf_1	(r0 * EGF * Raf)+(r_1 * pMek)+(r_3 * pErk)-(r1 * Mek * pRaf)-(r3 * Erk * pRaf)	sigma	normal
 Mek_1	(r_1 * pMek)-(r1 * Mek * pRaf)	sigma	normal
 pMek_1	(r1 * Mek * pRaf)+(r_2 * pErk)-(r_1 * pMek)-(r2 * pMek * Erk)	sigma	normal
 Erk_1	(r_2 * pErk)+(r_3 * pErk)-(r2 * Erk * pMek)-(r3 * Erk * pRaf)	sigma	normal
