@@ -9,6 +9,6 @@ problems:
   observable_files:
   - observables.tsv
   sbml_files:
-  - ngf_model.xml
+  - egf_model.xml
   visualization_files:
   - visualization.tsv
