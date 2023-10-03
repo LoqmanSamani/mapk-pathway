@@ -55,7 +55,7 @@ new approach, which utilizes the "petab" and "pypesto"
 |       └──  `files`        | Subfolder containing NGF-related data and other files.                                           |
 | `file_collection`         | This folder contains a collection of datasets, which can be used to estimate unknown parametrs    |
 |    └── `ngf`              | Subfolder containing NGF-related files.                                                          |
-|    └── `egf`              | Subfolder containing NGF-related files.                                                         |
+|    └── `egf`              | Subfolder containing EGF-related files.                                                         |
 --------------------------------------------------------------------------------------------------------------------------------
 
 ## Copyright and Permissions
