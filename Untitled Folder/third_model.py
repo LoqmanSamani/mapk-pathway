@@ -1,44 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 
 
-
 class ParameterEstimation:
-    """
-    ParameterEstimation class is designed for estimating unknown parameters 'r4' and 'r0'
-    in a biochemical model based on concentration data over time.
-    It uses a gradient descent approach to iteratively optimize these parameters.
-
-    Args:
-        actual_perk (numpy.ndarray): The actual concentration of the species to be estimated.
-        num_iterations (int): Maximum number of iterations for the optimization process.
-        stimuli (float): Initial concentration of stimuli.
-        raf (float): Initial concentration of Raf.
-        mek (float): Initial concentration of Mek.
-        erk (float): Initial concentration of Erk.
-        praf (float): Initial concentration of pRaf.
-        pmek (float): Initial concentration of pMek.
-        perk (float): Initial concentration of pErk.
-        r1, r2, r3, r_1, r_2, r_3 (float): Rate constants for biochemical reactions.
-        time (numpy.ndarray): Time points for the concentration data.
-        learning_rate (float): Learning rate for gradient descent (default: 1e-3).
-        threshold (float): Threshold to stop optimization when the change in MSE is small (default: 1e-6).
-
-    Attributes:
-        r4 (float): Estimated parameter 'r4'.
-        r0 (float): Estimated parameter 'r0'.
-        mse (float): Mean squared error of the optimization.
-        populations (dict): A dictionary storing the concentrations of various species over time.
-    """
-
-
-
-
 
     def __init__(self, actual_perk, num_iterations, stimuli, raf, mek, erk, praf, pmek,
                  perk, r1, r2, r3, r_1, r_2, r_3, time, learning_rate=1e-3, threshold=1e-6):
@@ -69,12 +32,6 @@ class ParameterEstimation:
         self.mse = None
         self.populations = None  # a variable to store the concentration of the species in the last iteration
 
-
-
-
-
-
-
     def mean_squared_error(self, simulated_erk):
 
         """
@@ -95,11 +52,6 @@ class ParameterEstimation:
 
         return mse
 
-
-
-
-
-
     def simulate_concentration(self):
 
         """
@@ -110,7 +62,6 @@ class ParameterEstimation:
             numpy.ndarray: Simulated concentrations of pErk.
         """
 
-
         # Initialize arrays to store species concentrations
         stimuli_concentration = np.zeros(len(self.time))
         raf_concentration = np.zeros(len(self.time))
@@ -119,8 +70,6 @@ class ParameterEstimation:
         praf_concentration = np.zeros(len(self.time))
         pmek_concentration = np.zeros(len(self.time))
         perk_concentration = np.zeros(len(self.time))
-
-
 
         # Initialize initial concentrations
         stimuli_concentration[0] = self.stimuli
@@ -131,10 +80,9 @@ class ParameterEstimation:
         pmek_concentration[0] = self.pmek
         perk_concentration[0] = self.perk
 
-
         """
         The concentration of each species will be updated (dynamic programming) based on the reaction-information below.
-        
+
              **REACTIONS**       **RATE EQUATIONS**         **RARE OF CHANGE**
         R1: EGF + Raf -> pRaf      r0 * EGF * Raf
         R2: pRaf + Mek -> pMek     r1 * pRaf * Mek           dEGF/dt = - r0 * EGF * Raf 
@@ -144,30 +92,43 @@ class ParameterEstimation:
         R6: pRaf + Erk -> pErk     r3 * pRaf * Erk           dpRaf/dt = (r0 * EGF * Raf)-(r_1 * pMek * pRaf)-(r3 * pRaf * Erk)-(r_3 * pErk * pRaf)
         R7: pErk + pRaf -> Raf     r_3 * pErk * pRaf         dpMek/dt = (r1 * pRaf * Mek)-(r_1 * pMek * pRaf)-(r2 * pMek * Erk)-(r_2 * pErk * pMek)
         R8: pErk -> Erk            r4 * pErk                 dpErk/dt = (r2 * pMek * Erk)-(r_2 * pErk * pMek)+(r3 * pRaf * Erk)-(r_3 * pErk * pRaf)-(r4 * pErk)
-        
+
         """
 
         # Iteratively update concentrations based on reactions
         for i in range(1, len(self.time)):
-
             # Calculate derivatives for each species
-            der_stimuli = -self.r0 * stimuli_concentration[i-1] * raf_concentration[i-1]
-            der_raf = (self.r_1 * pmek_concentration[i-1] * praf_concentration[i-1]) + (self.r_3 * perk_concentration[i-1] * praf_concentration[i-1]) - (self.r0 * stimuli_concentration[i-1] * raf_concentration[i-1])
-            der_mek = (self.r_2 * perk_concentration[i-1] * pmek_concentration[i-1]) + (self.r1 * praf_concentration[i-1] * pmek_concentration[i-1])
-            der_erk = (self.r4 * perk_concentration[i-1]) - (self.r3 * praf_concentration[i-1] * erk_concentration[i-1] - (self.r2 * pmek_concentration[i-1] * erk_concentration[i-1]))
-            der_praf = (self.r0 * stimuli_concentration[i-1] * raf_concentration[i-1]) - (self.r_1 * pmek_concentration[i-1] * praf_concentration[i-1]) - (self.r3 * praf_concentration[i-1] * erk_concentration[i-1] - (self.r_3 * perk_concentration[i-1] * praf_concentration[i-1]))
-            der_pmek = (self.r1 * praf_concentration[i-1] * mek_concentration[i-1]) - (self.r_1 * pmek_concentration[i-1] * praf_concentration[i-1]) - (self.r2 * pmek_concentration[i-1] * erk_concentration[i-1]) - (self.r_2 * perk_concentration[i-1] * pmek_concentration[i-1])
-            der_perk = (self.r2 * pmek_concentration[i-1] * erk_concentration[i-1]) - (self.r_2 * perk_concentration[i-1] * pmek_concentration[i-1]) + (self.r3 * praf_concentration[i-1] * erk_concentration[i-1]) - (self.r_3 * perk_concentration[i-1] * praf_concentration[i-1]) - (self.r4 * perk_concentration[i-1])
+            der_stimuli = -self.r0 * stimuli_concentration[i - 1] * raf_concentration[i - 1]
+            der_raf = (self.r_1 * pmek_concentration[i - 1] * praf_concentration[i - 1]) + (
+                        self.r_3 * perk_concentration[i - 1] * praf_concentration[i - 1]) - (
+                                  self.r0 * stimuli_concentration[i - 1] * raf_concentration[i - 1])
+            der_mek = (self.r_2 * perk_concentration[i - 1] * pmek_concentration[i - 1]) + (
+                        self.r1 * praf_concentration[i - 1] * pmek_concentration[i - 1])
+            der_erk = (self.r4 * perk_concentration[i - 1]) - (
+                        self.r3 * praf_concentration[i - 1] * erk_concentration[i - 1] - (
+                            self.r2 * pmek_concentration[i - 1] * erk_concentration[i - 1]))
+            der_praf = (self.r0 * stimuli_concentration[i - 1] * raf_concentration[i - 1]) - (
+                        self.r_1 * pmek_concentration[i - 1] * praf_concentration[i - 1]) - (
+                                   self.r3 * praf_concentration[i - 1] * erk_concentration[i - 1] - (
+                                       self.r_3 * perk_concentration[i - 1] * praf_concentration[i - 1]))
+            der_pmek = (self.r1 * praf_concentration[i - 1] * mek_concentration[i - 1]) - (
+                        self.r_1 * pmek_concentration[i - 1] * praf_concentration[i - 1]) - (
+                                   self.r2 * pmek_concentration[i - 1] * erk_concentration[i - 1]) - (
+                                   self.r_2 * perk_concentration[i - 1] * pmek_concentration[i - 1])
+            der_perk = (self.r2 * pmek_concentration[i - 1] * erk_concentration[i - 1]) - (
+                        self.r_2 * perk_concentration[i - 1] * pmek_concentration[i - 1]) + (
+                                   self.r3 * praf_concentration[i - 1] * erk_concentration[i - 1]) - (
+                                   self.r_3 * perk_concentration[i - 1] * praf_concentration[i - 1]) - (
+                                   self.r4 * perk_concentration[i - 1])
 
             # Update concentrations
-            stimuli_concentration[i] = stimuli_concentration[i-1] + der_stimuli
-            raf_concentration[i] = raf_concentration[i-1] + der_raf
-            mek_concentration[i] = mek_concentration[i-1] + der_mek
-            erk_concentration[i] = erk_concentration[i-1] + der_erk
-            praf_concentration[i] = praf_concentration[i-1] + der_praf
-            pmek_concentration[i] = pmek_concentration[i-1] + der_pmek
-            perk_concentration[i] = perk_concentration[i-1] + der_perk
-
+            stimuli_concentration[i] = stimuli_concentration[i - 1] + der_stimuli
+            raf_concentration[i] = raf_concentration[i - 1] + der_raf
+            mek_concentration[i] = mek_concentration[i - 1] + der_mek
+            erk_concentration[i] = erk_concentration[i - 1] + der_erk
+            praf_concentration[i] = praf_concentration[i - 1] + der_praf
+            pmek_concentration[i] = pmek_concentration[i - 1] + der_pmek
+            perk_concentration[i] = perk_concentration[i - 1] + der_perk
 
         # Store the concentrations in a dictionary
         self.populations = {
@@ -182,10 +143,6 @@ class ParameterEstimation:
         }
 
         return perk_concentration
-
-
-
-
 
     def gradient_descent(self):
 
@@ -230,5 +187,3 @@ class ParameterEstimation:
             mse_prev = mse  # Update the previous MSE
 
         return self.r4, self.r0, self.mse, self.populations
-    
-
