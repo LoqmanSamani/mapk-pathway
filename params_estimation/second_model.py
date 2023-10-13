@@ -192,7 +192,7 @@ ngf_model = ParameterEstimation(actual_ngf, ngf, raf, mek, erk, pRaf, pMek, pErk
 egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, pRaf, pMek, pErk, er1, er2, er3, er_1, er_2, er_3, time, num_iter)
 
 
-r4, r0, mse, populations = ngf_model.gradient_descent(1, 1)
-r4, r0, mse, populations = egf_model.gradient_descent(1, 1)
+r4, r0, mse, populations = ngf_model.gradient_descent(r0=1, r4=1)
+r4, r0, mse, populations = egf_model.gradient_descent(r0=1, r4=1)
 
 

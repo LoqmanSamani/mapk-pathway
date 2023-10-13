@@ -1,9 +1,7 @@
+﻿
 
 
 1) Differential equation model (which defines only one state for each protein).
-
-
-
 
 
 
@@ -31,7 +29,7 @@
 
 
 
-2) differential equation models (which define an active (phosphorylated) and an inactive (non-phosphorylated) state for each protein)
+2) differential equation models (which define an active (phosporilated) and an inactive (non-phosporilated) state for each protein)
 
 
 
@@ -96,8 +94,6 @@
 
 
 
-
-
         
                                                 **THE FORTH MODEL**
         ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -126,8 +122,6 @@
        ---------------------------------------------------------------------------------------------------------- 
        ## This model adds an equation for the inverse of reaction R1.
           
-
-
 
 
 
@@ -168,17 +162,21 @@
 
 
 
-
 -----------------------------------------------------------------------------------
-Each  model can be used for both stimuli - NGF and EGF - as they stimulate the same
-signaling pathway. For each model, we have prepared (for both stimuli) 10 different
-data  sets (.tsv and .yaml files),  with different  parameter  ranges  in each case
-(They can be found in the file_collection folder),  which  can be  used to estimate
-the parameters with pypesto package.
+Each model can be used for both  stimuli - NGF  and  EGF - as they stimulate 
+the same signaling pathway. For each model, we prepared (for both stimuli) 
+10 different data sets  (.tsv and .yaml files),  each with  different parameter
+ranges (they can be found in the  file_collection folder),  which can be used 
+to estimate the parameters with the pypesto package. Also, we have written 
+Python programs for all different sets of equations to estimate the unknown
+parameters using a different method, They can be found in the params_estimation
+folder.
+
 
 We can of course extend the model in various ways (e.g., define degradation
 equations  for each protein),  but we think that this  is not necessary for 
 our study and would be beyond the scope of our work!
+
 
 
 Loghman Samani 

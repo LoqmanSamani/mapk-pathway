@@ -28,7 +28,6 @@ class ParameterEstimation:
         self.threshold = threshold  # Threshold to stop optimization
 
         # Initialize variables for optimization
-        self.r4 = None
         self.r0 = None
         self.mse = []
         self.populations = []
@@ -70,12 +69,12 @@ class ParameterEstimation:
 
             # Calculate derivatives for each species
             d_stimulus = -self.r0 * stimulus[i-1] * raf[i-1]
-            d_raf = (self.r_1 * pmek[i-1] * praf[i-1]) + (self.r_3 * perk[i-1] * praf[i-1]) - (self.r0 * stimulus[i-1] * raf[i-1])
-            d_mek = (self.r_2 * perk[i-1] * pmek[i-1]) + (self.r1 * praf[i-1] * pmek[i-1])
-            d_erk = (self.r4 * perk[i-1]) - (self.r3 * praf[i-1] * erk[i-1] - (self.r2 * pmek[i-1] * erk[i-1]))
-            d_praf = (self.r0 * stimulus[i-1] * raf[i-1]) - (self.r_1 * pmek[i-1] * praf[i-1]) - (self.r3 * praf[i-1] * erk[i-1] - (self.r_3 * perk[i-1] * praf[i-1]))
-            d_pmek = (self.r1 * praf[i-1] * mek[i-1]) - (self.r_1 * pmek[i-1] * praf[i-1]) - (self.r2 * pmek[i-1] * erk[i-1]) - (self.r_2 * perk[i-1] * pmek[i-1])
-            d_perk = (self.r2 * pmek[i-1] * erk[i-1]) - (self.r_2 * perk[i-1] * pmek[i-1]) + (self.r3 * praf[i-1] * erk[i-1]) - (self.r_3 * perk[i-1] * praf[i-1]) - (self.r4 * perk[i-1])
+            d_raf = -self.r0 * stimulus[i-1] * raf[i-1]
+            d_mek = (self.r_1 * pmek[i-1]) - (self.r1 * praf[i-1] * pmek[i-1])
+            d_erk = (self.r_2 * perk[i-1]) + (self.r_3 * perk[i-1]) - (self.r2 * pmek[i-1] * erk[i-1]) - (self.r3 * erk[i-1] * praf[i-1])
+            d_praf = (self.r0 * stimulus[i-1] * raf[i-1]) + (self.r_1 * pmek[i-1]) + (self.r_3 * perk[i-1]) - (self.r1 * mek[i-1] * praf[i-1]) - (self.r3 * erk[i-1] * praf[i-1])
+            d_pmek = (self.r1 * praf[i-1] * mek[i-1]) - (self.r_1 * pmek[i-1]) - (self.r2 * pmek[i-1] * erk[i-1])
+            d_perk = (self.r2 * pmek[i-1] * erk[i-1]) + (self.r3 * praf[i-1] * erk[i-1]) - (self.r_3 * perk[i-1])
 
             # Update concentrations
             stimulus[i] = stimulus[i-1] + d_stimulus
@@ -104,10 +103,10 @@ class ParameterEstimation:
 
 
 
-    def gradient_descent(self, r0, r4):
+    def gradient_descent(self, r0):
+
         # Initialize parameters
         self.r0 = r0
-        self.r4 = r4
 
         mse_prev = np.inf  # initialize with a large number
 
@@ -124,17 +123,14 @@ class ParameterEstimation:
             if abs(mse_prev - mse) < self.threshold:
                 break
 
-            # Calculate the gradients manually
             gradient_r0 = -2 * np.mean((self.actual - predicted) * self.populations[-1]['pRaf'] * self.populations[-1]['Stimulus'])
-            gradient_r4 = -2 * np.mean((self.actual - predicted) * self.populations[-1]['pErk'])
 
-            # Update parameters using gradient descent
+            # Update parameter using gradient descent
             self.r0 -= self.learning_rate * gradient_r0
-            self.r4 -= self.learning_rate * gradient_r4
 
             mse_prev = mse  # Update the previous MSE
 
-        return self.r4, self.r0, self.mse, self.populations
+        return self.r0, self.mse, self.populations
 
 
 
@@ -192,7 +188,7 @@ ngf_model = ParameterEstimation(actual_ngf, ngf, raf, mek, erk, pRaf, pMek, pErk
 egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, pRaf, pMek, pErk, er1, er2, er3, er_1, er_2, er_3, time, num_iter)
 
 
-r4, r0, mse, populations = ngf_model.gradient_descent(1, 1)
-r4, r0, mse, populations = egf_model.gradient_descent(1, 1)
+r0, mse, populations = ngf_model.gradient_descent(r0=1)
+r0, mse, populations = egf_model.gradient_descent(r0=1)
 
 
