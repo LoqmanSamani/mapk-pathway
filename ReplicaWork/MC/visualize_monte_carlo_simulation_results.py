@@ -1,8 +1,10 @@
+import matplotlib.pyplot as plt
+
 
 # Plot(in form of histograms) the results of the monte carlo simulations
 
 values = list(m_ngf_15_min.values())
-plt.figure(figsize=(10,7))
+plt.figure(figsize=(10, 7))
 plt.hist(values, bins=1000, alpha=0.7, 
          label=['raf_mek','raf_erk','mek_raf','mek_erk','erk_raf','erk_mek'],
          histtype='stepfilled')
