@@ -33,6 +33,15 @@ plt.show()
 
 
 
+
+
+
+
+
+
+
+
+
 values2 = list(m_ngf_5_min.values())
 plt.figure(figsize=(10,7))
 plt.hist(values2, bins=1000, alpha=0.7, 
