@@ -107,8 +107,8 @@ class ParameterEstimation:
                 break
 
             # Calculate the gradients manually
-            gradient_r0 = -2 * np.mean((self.actual - predicted) * self.populations[-1]['pRaf'] * self.populations[-1]['Stimulus'])
-            gradient_d = -2 * np.mean((self.actual - predicted) * self.populations[-1]['pErk'])
+            gradient_r0 = -2 * np.mean((self.actual - predicted) * self.populations[-1]['Raf'] * self.populations[-1]['Stimulus'])
+            gradient_d = -2 * np.mean((self.actual - predicted) * self.populations[-1]['Erk'])
 
             # Update parameters using gradient descent
             self.r0 -= self.learning_rate * gradient_r0
