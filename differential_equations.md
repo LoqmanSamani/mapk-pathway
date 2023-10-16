@@ -1,23 +1,33 @@
 ﻿
 
 
-1) Differential equation model (which defines only one state for each protein).
+# Differential equation model (which defines only one state for each protein).
+-------------------------------------------------------------------------------
 
 
 
 
-                                                **THE FIRST MODEL**
+                                                
+# THE FIRST MODEL
+-----------------
         ----------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                **RATE EQUATIONS**                      **RATE OF CHANGE**
         ----------------------------------------------------------------------------------------------------------------------------------------------
-        R1: EGF ->  Raf               r0  * EGF        
+        R1: EGF ->  Raf               r0  * EGF  
+              
         R2: Raf ->  Mek               r1  * Raf                         dEGF/dt  = - r0 * EGF  
+        
         R3: Mek ->  Raf               r_1 * Mek                         dRaf/dt  = (r0 * EGF) + (r_3 * Erk) + (r_1 * Mek) - (r3 * Raf) - (r1 * Raf)
+        
         R4: Mek ->  Erk               r2  * Mek                         dmek/dt  = (r1 * Raf) + (r_2 * Erk) - (r_1 * Mek) - (r2 * Mek) 
+        
         R5: Erk ->  Mek               r_2 * Erk                         dErk/dt  = (r3 * Raf) + (r2 * Mek) - (r_2 * Erk) - (r_3 * Erk) - (d * Erk)
-        R6: Raf ->  Erk               r3  * Raf          
-        R7: Erk ->  Raf               r_3 * Erk         
+        
+        R6: Raf ->  Erk               r3  * Raf  
+                
+        R7: Erk ->  Raf               r_3 * Erk   
+              
         R8: Erk ->  NaN               d   * Erk                
 
 
@@ -29,14 +39,16 @@
 
 
 
-2) differential equation models (which define an active (phosporilated) and an inactive (non-phosporilated) state for each protein)
+# differential equation models (which define an active (phosporilated) and an inactive (non-phosporilated) state for each protein)
+-----------------------------------------------------------------------------------------------------------------------------------
 
 
 
 
 
 
-                                                **THE SECOND MODEL**
+# THE SECOND MODEL
+----------------------
         -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                **RATE EQUATIONS**                      **RATE OF CHANGE**
@@ -57,6 +69,7 @@
 
         R8: pErk         ->  Erk         r4   * pErk                dpErk/dt = (r2 * pMek * Erk)   - (r_2 * pErk * pMek) + (r3 * pRaf * Erk) - (r_3 * pErk * pRaf) - (r4 * pErk)
 
+
         ----------------------------------------------------------------------------------------------------
         ## The logic of the model is wrong! but it can be the right model to reproduce the original article!
 
@@ -66,7 +79,8 @@
 
 
 
-                                               **THE THIRD MODEL**
+# THE THIRD MODEL
+------------------
         ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                      **RATE EQUATIONS**         **RATE OF CHANGE**
@@ -86,8 +100,10 @@
 
         R7: pErk       -> pRaf + Erk            r_3 * pErk * pRaf         dpErk/dt = (r2 * Erk * pMek) + (r3 * Erk * pRaf) - (r_3 * pErk)
         
+
         ---------------------------------------------------------------------------------------------
         ## The logic of the model is correct! but it does not define a degradation equation for pErk,
+
            nor does it define an equation for the inverse of the R1 equation!
 
 
@@ -95,7 +111,8 @@
 
 
         
-                                                **THE FORTH MODEL**
+# THE FORTH MODEL
+-----------------
         ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                      **RATE EQUATIONS**         **RATE OF CHANGE**
@@ -120,6 +137,7 @@
                           
 
        ---------------------------------------------------------------------------------------------------------- 
+
        ## This model adds an equation for the inverse of reaction R1.
           
 
@@ -127,7 +145,8 @@
 
 
 
-                                                **THE FIFTH MODEL**
+# THE FIFTH MODEL
+-----------------
         ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
              **REACTIONS**                      **RATE EQUATIONS**         **RATE OF CHANGE**
@@ -152,8 +171,11 @@
         R9: pErk       -> NaN (degradation)     d * pErk                  
 
        ---------------------------------------------------------------------------------------------------------- 
+
        ## This model is more complete than the others, it defines a degradation equation for pErk (why not Erk!).
+
           The only problem with this model is that it has an inverse equation for R1
+
          (since EGF is a stimulus, it may not be affected by the pathway proteins)!
 
 
@@ -163,27 +185,39 @@
 
 
 -----------------------------------------------------------------------------------
+
 Each model can be used for both  stimuli - NGF  and  EGF - as they stimulate 
+
 the same signaling pathway. For each model, we prepared (for both stimuli) 
+
 10 different data sets  (.tsv and .yaml files),  each with  different parameter
+
 ranges (they can be found in the  file_collection folder),  which can be used 
+
 to estimate the parameters with the pypesto package. Also, we have written 
+
 Python programs for all different sets of equations to estimate the unknown
+
 parameters using a different method, They can be found in the params_estimation
+
 folder.
 
 
 Of course, the model can be  extended in several ways (e.g., by defining
+
 degradation equations for each protein or defining the receptor tyrosine
+
 kinases (TrkA) and the  epidermal  growth  factor receptor (EGFR) by two
+
 different stimuli,  NGF and EGF,  respectively),  but we think that this
+
 is not necessary for our study and is beyond the scope of our work!
 
 
 
+------------------------------------------------------------------
+
 Loghman Samani 
+
 30.September.2023
 
-
-        
-       
