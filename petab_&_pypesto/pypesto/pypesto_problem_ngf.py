@@ -60,14 +60,14 @@ problem = importer.create_problem(obj)
 
 optimizer = optimize.ScipyOptimizer()
 """
-we used this differnt optimizers:
-
+we used these differnt optimizers:
 optimizer = optimize.ScipyOptimizer()
 optimizer = optimize.PyswarmOptimizer()
 optimizer = optimize.NLoptOptimizer()
 optimizer = optimize.IpoptOptimizer()
 
 """
+
 engine = pypesto.engine.MultiProcessEngine()
 
 result = optimize.minimize(problem=problem, optimizer=optimizer, n_starts=10, engine=engine)
