@@ -1,62 +1,72 @@
-﻿Reproduction of "Growth Factor-Induced MAPK Network Topology" Study
+﻿Unraveling the Complexity of MAPK Signaling Pathways
 ------------------------------------------------
 
-This repository is dedicated to reproducing the work presented
-in the article titled "Growth Factor-Induced MAPK Network
-Topology Shapes Erk Response Determining PC-12 Cell Fate"
-by Silvia D. M. Santos, Peter J. Verveer, and Philippe
-I. H. Bastiaens, originally published in 2007. In our 
-research endeavor, we aim to replicate the findings 
-and methodologies outlined in this influential paper.
+"This repository is dedicated to reproducing the work presented
+in the article titled "Growth Factor-Induced MAPK Network Topology 
+Shapes Erk Response Determining PC-12 Cell Fate" by Silvia
+D. M. Santos, Peter J. Verveer, and Philippe I. H. Bastiaens,
+originally published in 2007. In our research endeavor, we aim to
+replicate the findings and methodologies outlined in this influential
+paper. Additionally, we have redefined aspects of the signaling pathway
+studied in this article in various ways and used different tools and 
+parameter estimation methods to determine previously unknown parameters."
 
 
 Overview
 -----------------------------------------------
-In this repository, you will find a comprehensive
- collection of files and resources related to our 
-efforts in reproducing the study. Our approach 
-includes both the original methodology, "Modular
- Response Analysis (MRA)," a sensitivity analysis 
-developed by Kholodenko et al., and a novel approach
- leveraging "petab" and "pypesto" tools, implemented in Python.
+
+"In this repository, you will find a comprehensive collection of files and
+resources related to our efforts in reproducing the study. Our approach 
+encompasses the original methodology, "Modular Response Analysis (MRA)(a sensitivity
+analysis developed by Kholodenko et al.)". In addition, we have employed two different
+approaches: one utilizing "petab" and "pypesto" tools, and the other involving 
+gradient-based algorithms implemented in Python."
 
 
 Folder Structure
 ------------------------------------------------
-• additional_resources : Contains files and materials related to
+
+• replica_work :
+Contains files and materials related to
 the replication of the original study using the MRA approach.
 (some results may not match those of the study due to the use of different statistical methods)
 
 
-
- • petab_&_pypesto : This folder is dedicated to our 
-new approach, which utilizes the "petab" and "pypesto"
- tools. We have developed Python code to replicate the
- study's findings using this modern framework.
-
-• file_collection: a collection of different datasets for both stimuli(NGF and EGF),
-  each with all necessary files (.tsv & .yaml) that can be used to estimate unknown
-  parameters with the pypesto package.   can you improve this text
+• petab_&_pypesto :
+This folder is dedicated to one of the new approaches, which utilizes the "petab" and "pypesto"
+tools. We have developed Python code to replicate the study's findings using this modern framework.
 
 
+• file_collection:
+a collection of different datasets for both stimuli(NGF and EGF),
+each with all necessary files (.tsv & .yaml) that can be used to estimate unknown
+parameters with the pypesto package.
 
-| Folder Structure          | Description                                                                                     |
-| ------------------------- | ----------------------------------------------------------------------------------------------- |
-| `additional_resources`    | This folder contains files that reproduce the same work as the original paper.                 |
-|   └── `codes`             | Subfolder containing code files related to the work in the `additional_resources` folder.       |
-|   └── `plots`             | Subfolder containing plot files related to the work in the `codes` folder.                      |
-|                           |                                                                                                  |
-| `petab_&_pypesto`         | This folder contains PEtab and PyPESTO-related files.                                           |
-|   └── `egf_files`         | Subfolder containing EGF-related files.                                                          |
-|        └──  `codes`       | Subfolder containing EGF-related code files.                                                     |
-|        └──  `files`       | Subfolder containing EGF-related data and other files.                                           |
-|   └── `ngf_files`         | Subfolder containing NGF-related files.                                                          |
-|       └──  `codes`        | Subfolder containing NGF-related code files.                                                     |
-|       └──  `files`        | Subfolder containing NGF-related data and other files.                                           |
-| `file_collection`         | This folder contains a collection of datasets, which can be used to estimate unknown parametrs    |
-|    └── `ngf`              | Subfolder containing NGF-related files.                                                          |
-|    └── `egf`              | Subfolder containing EGF-related files.                                                         |
---------------------------------------------------------------------------------------------------------------------------------
+
+• params_estimation:
+Within this directory, you will find various Python programs
+that serve as algorithms for estimating the unknown parameters defined within the system.
+
+
+
+| Folder Structure    | Description                                                                                                         |
+|---------------------|---------------------------------------------------------------------------------------------------------------------|
+| `replica_work`      | This folder contains files that reproduce the same work as the original paper.                                      |
+| └── `CI`            | Subfolder containing files related to calculation intensity.                                                        |
+| └── `GRC`           | Subfolder containing files related to the Global Response Coefficients.                                             |
+| └── `LRC`           | Subfolder containing files related to the Local Response Coefficients.                                              |
+| └── `MC`            | Subfolder containing files related to monte carlo simulation.                                                       |
+|                     |                                                                                                                     |
+| `petab_&_pypesto`   | This folder contains PEtab and PyPESTO-related files.                                                               |
+| └── `petab`         | Subfolder containing code that can be used to create petab files.                                                   |
+| └──  `pypesto`      | Subfolder containing code that can be used to create a pypesto problem.                                             |
+|                     |                                                                                                                     |
+| `file_collection`   | This folder contains a collection of datasets, which can be used to estimate unknown parameters                     |
+| └── `ngf`           | Subfolder containing NGF-related files.                                                                             |
+| └── `egf`           | Subfolder containing EGF-related files.                                                                             |
+|                     |                                                                                                                     |
+| `params_estimation` | This folder contains files for estimating unknown parameters in various cases using the gradient descent algorithm. |
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Copyright and Permissions
 

@@ -173,9 +173,11 @@ parameters using a different method, They can be found in the params_estimation
 folder.
 
 
-We can of course extend the model in various ways (e.g., define degradation
-equations  for each protein),  but we think that this  is not necessary for 
-our study and would be beyond the scope of our work!
+Of course, the model can be  extended in several ways (e.g., by defining
+degradation equations for each protein or defining the receptor tyrosine
+kinases (TrkA) and the  epidermal  growth  factor receptor (EGFR) by two
+different stimuli,  NGF and EGF,  respectively),  but we think that this
+is not necessary for our study and is beyond the scope of our work!
 
 
 
