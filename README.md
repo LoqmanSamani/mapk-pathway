@@ -1,20 +1,12 @@
 ﻿Unraveling the Complexity of MAPK Signaling Pathways
 ------------------------------------------------
 
-This repository  is dedicated to  reproducing the work   presented  in the article
-
-titled  " Growth Factor-Induced MAPK  Network Topology  Shapes Erk Response
-
+This repository  is dedicated to  reproducing the work   presented  in the article titled  " Growth Factor-Induced MAPK  Network Topology  Shapes Erk Response
 Determining     PC-12  Cell     Fate " by SilviaD. M. Santos, Peter J. Verveer, and 
-
 Philippe I. H. Bastiaens, originally published in 2007. In our research endeavor,
-
 we aim to replicate the findings and  methodologies outlined in this influential
-
 paper.   Additionally,   we  have  redefined  aspects  of the  signaling  pathway 
-
 studied in this article in various ways and used different tools and  parameter 
-
 estimation methods to determine previously unknown parameters.
 
 
@@ -22,52 +14,40 @@ Overview
 -----------------------------------------------
 
 In this repository, you will find a comprehensive collection of files and resources
-
 related  to our efforts  in reproducing  the study.  Our approach encompasses the 
-
 original methodology,  "Modular Response Analysis (MRA)(a sensitivity analysis 
-
 developed by  Kholodenko et al.)".   In addition, we have employed two different
-
 approaches: one utilizing  "petab"  and  "pypesto"  tools, and the other involving 
-
 gradient-based algorithms implemented in Python."
 
 
 Folder Structure
 ------------------------------------------------
 
-'replica_work '
+`replica_work` 
 
 Contains files and materials related to the replication of the original study using 
-
 the MRA  approach.  (some results may not match those of the study  due to the 
-
 use of different statistical methods)
 
 
-'petab_&_pypesto'
+`petab_&_pypesto` 
 
 This folder is dedicated to one of the new approaches, which utilizes the "petab"
-
 and "pypesto" tools.  We have  developed  Python  code to  replicate the study's 
-
 findings using this modern framework.
 
 
-'file_collection'
+`file_collection` 
 
 a collection  of different datasets for  both stimuli (NGF and EGF) ,  each  with all 
-
 necessary files (.tsv & .yaml) that can be used to estimate unknown parameters
-
 with the pypesto package.
 
 
-'params_estimation'
+`params_estimation` 
 
 Within  this directory,   you  will find  various  Python  programs  that  serve as
-
 algorithms for estimating the unknown parameters defined within the system.
 
 
