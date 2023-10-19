@@ -95,7 +95,7 @@ algorithms for estimating the unknown parameters defined within the system.
 
 This repository is intended for educational and research purposes. The materials and content provided within 
 
-this  repository  are subject to  copyright and intellectual property rights. The  reproduction  and use  of these 
+this  repository  is subject to  copyright and intellectual property rights. The  reproduction  and use  of these 
 
 materials  are governed  by the principles  of fair use  and  applicable  copyright laws.  Users are encouraged 
 
