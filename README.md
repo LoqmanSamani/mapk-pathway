@@ -51,6 +51,10 @@ Within  this directory,   you  will find  various  Python  programs  that  serve
 algorithms for estimating the unknown parameters defined within the system.
 
 
+`article` 
+
+Contained within this directory are both the comprehensive report (article) and the accompanying appendix files, detailing the project.
+
 
 | Folder Structure    | Description                                                                                                         |
 |---------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -69,6 +73,8 @@ algorithms for estimating the unknown parameters defined within the system.
 | └── `egf`           | Subfolder containing EGF-related files.                                                                             |
 |                     |                                                                                                                     |
 | `params_estimation` | This folder contains files for estimating unknown parameters in various cases using the gradient descent algorithm. |
+|                     |                                                                                                                     |
+| `article`           | This folder contains a report on our work.                                                                          |
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Copyright and Permissions
