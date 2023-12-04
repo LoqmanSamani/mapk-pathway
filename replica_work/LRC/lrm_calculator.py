@@ -1,6 +1,4 @@
-
-import numpy as np
-
+from machine_learning.linear_algebra import intro_numpy as np
 
 """
 Calculate local response matrix based on global response matrix with the Modular
