@@ -79,25 +79,9 @@ Contained within this directory are both the comprehensive report (article) and 
 
 ## Copyright and Permissions
 
-This repository is intended for educational and research purposes. The materials and content provided within 
+This repository is governed by the terms of the [MIT License](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/LICENSE) 
 
-this  repository  is subject to  copyright and intellectual property rights. The  reproduction  and use  of these 
 
-materials  are governed  by the principles  of fair use  and  applicable  copyright laws.  Users are encouraged 
-
-to  review  and  respect the original  authors' rights  as   specified   in the   referenced   articles   and   papers. 
-
-When   using or referencing the   content within this repository,  proper attribution and citation to the original
-
-sources,    including   the cited articles and authors,   is essential.    Any commercial   or for-profit   use of the 
-
-materials   in this repository   may require additional   permissions or licensing from the respective copyright
-
-holders. The repository   maintainers do not assume liability  for any misuse or violation of copyright laws by
-
-users. For questions or inquiries regarding copyright, permissions, or licensing, please contact the respective
-
-copyright holders or authors as indicated in the original sources.
 
 
 
