@@ -38,7 +38,7 @@ differences in how Erk is activated in response to NGF and EGF stimuli play a cr
 shaping the cellular responses [5]. In other words, the specific timing, magnitude, and duration of
 Erk activation can lead to a wide array of downstream effects, as depicted in (Figure 1).
 
-![mapk.png]()
+![mapk.png](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/mapk.png)
 <sub>**Figure 1: MAP Kinase Pathways. This diagram illustrates the intricate network of MAP Kinase Pathways, comprising multiple interconnected signaling pathways, each with its unique dependence on the others. The core proteins, including Raf, Mek, and Erk (illustrated in dark green), play pivotal roles in most of these pathways. Zooming into a specific segment of the MAPK signaling pathways, we focus our attention on this selected region (dark green) of the complex network for our research. The stimuli EGF (light green) and NGF (medium green) influence EGFR and TrkA receptors, respectively. Both stimuli impact isoforms of the same proteins—Raf, Mek, and Erk—within the same pathway, yielding distinct cellular outcomes: EGF prompts cellular proliferation (light green), while NGF induces neuronal differentiation (medium green).** </sub>
 
 The central question at hand is how variations in Erk dynamics are influenced by the processes
