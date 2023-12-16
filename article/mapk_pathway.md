@@ -80,7 +80,7 @@ method, we used special Python packages (PEtab [14] and pyPESTO [15]) to achieve
 result, namely estimating the unknown parameters and validating the already calculated
 parameters.
 
-![rrr.png](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/rrr.png)
+![rrr.png](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/diag_eq.png)
 <sub>**Figure 3: Diagrams Illustrating the Pathway. Five distinct diagrams are presented to elucidate the pathway in different
 manners. A) Single-State Diagram: In this case, a single diagram defines one state for each protein. B) Multi-State
 Diagrams: Four different diagrams offer varied representations of the model. In these instances, proteins exhibit two
