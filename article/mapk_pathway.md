@@ -17,7 +17,7 @@ Python, for a comparative analysis of parameter estimation.
 
 ### Graphical Abstract
 
-![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/Screenshot%20from%202023-11-26%2013-03-16.png)
+![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
 
 
 ### Introduction
@@ -59,7 +59,7 @@ challenging. However, by calculating local response coefficients, which indicate
 one module to another in isolation from the network, network connectivity maps can be generated
 (Figure 2).
 
-![grcs.png]()
+![grcs.png](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/grc.png)
 <sub>**Table1: Measured Global Response Coefficients. The tables show the measured global response coefficients derived from four sets of experiments, quantifying changes in the activity of specific modules, including Erk, Mek, and Raf proteins, before and after perturbation. Each experiment involved perturbations induced through RNA interference (RNAi), resulting in the effective downregulation of protein levels. These response coefficients were obtained from quantitative western blot experiments and are sourced from the article [3], Note that the measured GRCs are rounded to three decimal places, the original table contains measurements with 8 decimal places.** </sub>
 
 ![fig2](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/wiring.png)
@@ -105,7 +105,7 @@ During this process, we realized that MRA, with its matrix calculations (utilizi
 -[diag(Rp⁻¹)]⁻1 * Rp⁻¹), could be computationally intensive. To address this, we created a Python
 program [12] to measure computation times for different input matrix shapes (Figure 5 b).
 
-![grcs]()
+![grcs](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/grcs.png)
 <sub>**Figure 4: Visualized Bar Plots of Global- and Local-Response Coefficients. a) Average global response coefficients
 (GRC) for EGF and NGF (5 min) and NGF (15 min), The perturbations are represented on the x axis (Raf siRNA,
 Mek siRNA and Erk siRNA). Average GRC are depicted for pRaf (red), pMek (blue) and pErk(orange). b) Computed
