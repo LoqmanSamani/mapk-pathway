@@ -1,4 +1,4 @@
-﻿# Unraveling the Complexity of MAPK Signaling Pathway
+# Unraveling the Complexity of MAPK Signaling Pathway
 
 
 ![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
