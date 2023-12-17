@@ -146,7 +146,7 @@ erk_egf = np.array([0, 0.7, 1.0, 0.41, 0.1, 0.03, 0.01, 0.01, 0.01])
 actual_ngf = np.interp(time, t, erk_ngf)
 actual_egf = np.interp(time, t, erk_egf)
 
-num_iter = 1000
+num_iter = 200
 
 # Initial Concentration of Species
 ngf = 50
@@ -176,6 +176,9 @@ er_3 = -0.53
 ngf_model = ParameterEstimation(actual_ngf, ngf, raf, mek, erk, pRaf, pMek, pErk, nr1, nr2, nr3, nr_1, nr_2, nr_3, time, num_iter)
 egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, pRaf, pMek, pErk, er1, er2, er3, er_1, er_2, er_3, time, num_iter)
 
-r0, r_0,d, mse, populations = ngf_model.gradient_descent(r0=1, r_0=1, d=1)
+r0, r_0, d, mse, populations = ngf_model.gradient_descent(r0=1, r_0=1, d=1)
 r0, r_0, d, mse, populations = egf_model.gradient_descent(r0=1, r_0=1, d=1)
+
+
+
 

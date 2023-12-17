@@ -5,7 +5,7 @@ import numpy as np
 class ParameterEstimation:
 
     def __init__(self, actual, stimulus, raf, mek, erk, praf, pmek,
-                 perk, r1, r2, r3, r_1, r_2, r_3, time, num_iter, learning_rate=1e-3, threshold=1e-6):
+                 perk, r1, r2, r3, r_1, r_2, r_3, time, num_iter, learning_rate=1e-4, threshold=1e-6):
 
         # Initialize input parameters
         self.actual = actual  # The actual concentration of ppErk1/2 derived from a graph in the article
@@ -190,5 +190,8 @@ egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, pRaf, pMek, pErk
 
 r0, mse, populations = ngf_model.gradient_descent(r0=1)
 r0, mse, populations = egf_model.gradient_descent(r0=1)
+
+
+
 
 

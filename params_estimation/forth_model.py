@@ -154,7 +154,7 @@ actual_ngf = np.interp(time, t, erk_ngf)
 actual_egf = np.interp(time, t, erk_egf)
 
 
-num_iter = 1000
+num_iter = 200
 
 
 
@@ -195,5 +195,7 @@ egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, pRaf, pMek, pErk
 
 r_0, r0, mse, populations = ngf_model.gradient_descent(r0=1, r_0=1)
 r_0, r0, mse, populations = egf_model.gradient_descent(r0=1, r_0=1)
+
+
 
 

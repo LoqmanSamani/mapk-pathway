@@ -196,3 +196,5 @@ r4, r0, mse, populations = ngf_model.gradient_descent(r0=1, r4=1)
 r4, r0, mse, populations = egf_model.gradient_descent(r0=1, r4=1)
 
 
+
+

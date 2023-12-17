@@ -1,4 +1,5 @@
-from machine_learning.linear_algebra import intro_numpy as np
+import numpy as np
+
 
 
 class ParameterEstimation:
@@ -172,7 +173,5 @@ egf_model = ParameterEstimation(actual_egf, egf, raf, mek, erk, er1, er2, er3, e
 
 r0, d, mse, populations = ngf_model.gradient_descent(r0=1, d=1)
 r0, d, mse, populations = egf_model.gradient_descent(r0=1, d=1)
-
-
 
 

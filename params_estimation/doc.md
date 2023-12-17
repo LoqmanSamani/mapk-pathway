@@ -1,6 +1,8 @@
 
 The provided directory contains a set of Python files, each containing a class named `ParameterEstimation`.
 
+(There is also a subdirectory called `data` which contains output data and diagrams for each model.)
+
 This class  is designed  to  estimate  unknown  parameters  (r0, r_0, r4, and d) for a set of differential
 
 equations  using a  gradient-based  optimization  approach.  The code  is  structured  as  a practical and
