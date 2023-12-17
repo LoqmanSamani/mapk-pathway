@@ -1,4 +1,7 @@
 ﻿Unraveling the Complexity of MAPK Signaling Pathways
+
+![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
+<sub>Graphical abstract of the project</sub>
 ------------------------------------------------
 
 This repository  is dedicated to  reproducing the work   presented  in the article titled  " Growth Factor-Induced MAPK  Network Topology  Shapes Erk Response
