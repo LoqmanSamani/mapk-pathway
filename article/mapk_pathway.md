@@ -1,4 +1,4 @@
-## Unraveling the Complexity of MAPK Signaling Pathways
+## Unraveling the Complexity of MAPK Signaling Pathway
 
 ### Abstract
 In the dynamic landscape of systems biology, a pivotal and challenging task is the precise
