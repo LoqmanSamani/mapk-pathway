@@ -80,7 +80,7 @@ Contained within this directory are both the comprehensive report (article) and 
 | └── `egf`           | Subfolder containing EGF-related files.                                                                             |
 |                     |                                                                                                                     |
 | `params_estimation` | This folder contains files for estimating unknown parameters in various cases using the gradient descent algorithm. |
-|                     |                                                                                                                     |
+| └── `data`          | Subfolder contains the outcomes (numerical and plots) of the simulations.                                           |
 | `article`           | This folder contains a report on our work.                                                                          |
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
