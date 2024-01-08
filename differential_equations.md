@@ -187,33 +187,19 @@
 -----------------------------------------------------------------------------------
 
 Each model can be used for both  stimuli - NGF  and  EGF - as they stimulate 
-
-the same signaling pathway. For each model, we prepared (for both stimuli) 
-
+the same signaling pathway. For each model, we prepared (for both stimuli)
 10 different data sets  (.tsv and .yaml files),  each with  different parameter
-
-ranges (they can be found in the  file_collection folder),  which can be used 
-
-to estimate the parameters with the pypesto package. Also, we have written 
-
+ranges (they can be found in the  file_collection folder),  which can be used
+to estimate the parameters with the pypesto package. Also, we have written
 Python programs for all different sets of equations to estimate the unknown
-
 parameters using a different method, They can be found in the params_estimation
-
 folder.
 
-
 Of course, the model can be  extended in several ways (e.g., by defining
-
 degradation equations for each protein or defining the receptor tyrosine
-
 kinases (TrkA) and the  epidermal  growth  factor receptor (EGFR) by two
-
 different stimuli,  NGF and EGF,  respectively),  but we think that this
-
 is not necessary for our study and is beyond the scope of our work!
-
-
 
 ------------------------------------------------------------------
 
