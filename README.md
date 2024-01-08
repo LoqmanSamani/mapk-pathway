@@ -8,8 +8,8 @@
 
 ------------------------------------------------
 
-This repository  is dedicated to  reproducing the work   presented  in the article titled  " Growth Factor-Induced MAPK  Network Topology  Shapes Erk Response
-Determining     PC-12  Cell     Fate " by SilviaD. M. Santos, Peter J. Verveer, and 
+This repository  is dedicated to  reproducing the work   presented  in the article titled  [Growth Factor-Induced MAPK Network Topology Shapes Erk Response
+Determining PC-12  Cell Fate](https://www.nature.com/articles/ncb1543) by SilviaD. M. Santos, Peter J. Verveer, and 
 Philippe I. H. Bastiaens, originally published in 2007. In our research endeavor,
 we aim to replicate the findings and  methodologies outlined in this influential
 paper.   Additionally,   we  have  redefined  aspects  of the  signaling  pathway 
@@ -22,10 +22,9 @@ Overview
 
 In this repository, you will find a comprehensive collection of files and resources
 related  to our efforts  in reproducing  the study.  Our approach encompasses the 
-original methodology,  "Modular Response Analysis (MRA)(a sensitivity analysis 
-developed by  Kholodenko et al.)".   In addition, we have employed two different
-approaches: one utilizing  "petab"  and  "pypesto"  tools, and the other involving 
-gradient-based algorithms implemented in Python."
+original methodology,  [Modular Response Analysis](https://www.pnas.org/doi/abs/10.1073/pnas.192442699). In addition, we have employed two
+different approaches: one utilizing  [petab](https://petab.readthedocs.io/en/latest/) and [pypesto](https://pypesto.readthedocs.io/en/latest/) tools, and the other involving 
+gradient-based algorithms implemented in Python. 
 
 
 Folder Structure
