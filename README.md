@@ -1,6 +1,6 @@
 # Unraveling the Complexity of MAPK Signaling Pathway
 
-![Static Badge](https://img.shields.io/badge/MIT_License-blue)
+![Static Badge](https://img.shields.io/badge/MIT_License-red)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scipy)
 ![Static Badge](https://img.shields.io/badge/NumPy-1.25-darkgreen)
 ![Static Badge](https://img.shields.io/badge/pandas-2.1-darkblue)
