@@ -1,6 +1,13 @@
 # Unraveling the Complexity of MAPK Signaling Pathway
 
-![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/:https://github.com/LoqmanSamani/:mapk_pathway)
+![Static Badge](https://img.shields.io/badge/MIT_License-blue)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scipy)
+![Static Badge](https://img.shields.io/badge/NumPy-1.25-blue?color=blue)
+![Static Badge](https://img.shields.io/badge/pandas-2.1-darkblue?color=blue)
+![Static Badge](https://img.shields.io/badge/matplotlib-3.8-lightblue?color=blue)
+![Static Badge](https://img.shields.io/badge/PEtaB-0.2.7-yellow)
+![Static Badge](https://img.shields.io/badge/pyPESTO-0.4-red)
+
 
 
 ![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
