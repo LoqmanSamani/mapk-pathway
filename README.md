@@ -1,5 +1,9 @@
 # Unraveling the Complexity of MAPK Signaling Pathway
 
+
+![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
+<sub>**Graphical abstract of the project**</sub>
+
 ![Static Badge](https://img.shields.io/badge/MIT_License-red)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scipy)
 ![Static Badge](https://img.shields.io/badge/NumPy-1.25-darkgreen)
@@ -7,12 +11,6 @@
 ![Static Badge](https://img.shields.io/badge/matplotlib-3.8-lightblue?color=blue)
 ![Static Badge](https://img.shields.io/badge/PEtaB-0.2.7-yellow)
 ![Static Badge](https://img.shields.io/badge/pyPESTO-0.4-red)
-
-
-
-![abstract](https://github.com/LoqmanSamani/mapk_pathway/blob/systembiology/article/appendix/abstract.png)
-<sub>**Graphical abstract of the project**</sub>
-
 
 This repository  is dedicated to  reproducing the work   presented  in the article titled  [Growth Factor-Induced MAPK Network Topology Shapes Erk Response
 Determining PC-12  Cell Fate](https://www.nature.com/articles/ncb1543) by SilviaD. M. Santos, Peter J. Verveer, and 
