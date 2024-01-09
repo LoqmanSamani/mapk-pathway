@@ -5,6 +5,14 @@
 <sub>**Graphical abstract of the project**</sub>
 
 
+This repository  is dedicated to  reproducing the work   presented  in the article titled  [Growth Factor-Induced MAPK Network Topology Shapes Erk Response
+Determining PC-12  Cell Fate](https://www.nature.com/articles/ncb1543) by SilviaD. M. Santos, Peter J. Verveer, and 
+Philippe I. H. Bastiaens, originally published in 2007. In our research endeavor,
+we aim to replicate the findings and  methodologies outlined in this influential
+paper.   Additionally,   we  have  redefined  aspects  of the  signaling  pathway 
+studied in this article in various ways and used different tools and  parameter 
+estimation methods to determine previously unknown parameters.
+
 ## Acknowledgments
 -----------------------------------------------------------------
 
@@ -13,17 +21,6 @@ We ( Ines Schneider and Loghman Samani ) would like to express our gratitude to 
 - [Prof. Dr. Nicole Radde](https://www.isa.uni-stuttgart.de/institut/team/Radde-00003/): Our esteemed professor, whose guidance and support were instrumental throughout the project. The project was conducted as part of her [Systems Theory in Systems Biology](https://www.ist.uni-stuttgart.de/teaching/lectures/2022ss/stsb/) course.
 
 - [M.Sc. Amatus Beyer](https://www.isa.uni-stuttgart.de/institut/team/Beyer-00005/): Our project guide, whose expertise and feedback significantly contributed to the development and improvement of our work. We appreciate his valuable insights and continuous support.
-
-
-------------------------------------------------
-
-This repository  is dedicated to  reproducing the work   presented  in the article titled  [Growth Factor-Induced MAPK Network Topology Shapes Erk Response
-Determining PC-12  Cell Fate](https://www.nature.com/articles/ncb1543) by SilviaD. M. Santos, Peter J. Verveer, and 
-Philippe I. H. Bastiaens, originally published in 2007. In our research endeavor,
-we aim to replicate the findings and  methodologies outlined in this influential
-paper.   Additionally,   we  have  redefined  aspects  of the  signaling  pathway 
-studied in this article in various ways and used different tools and  parameter 
-estimation methods to determine previously unknown parameters.
 
 
 Overview
