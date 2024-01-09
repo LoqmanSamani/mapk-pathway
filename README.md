@@ -2,8 +2,8 @@
 
 ![Static Badge](https://img.shields.io/badge/MIT_License-blue)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scipy)
-![Static Badge](https://img.shields.io/badge/NumPy-1.25-blue?color=blue)
-![Static Badge](https://img.shields.io/badge/pandas-2.1-darkblue?color=blue)
+![Static Badge](https://img.shields.io/badge/NumPy-1.25-darkgreen)
+![Static Badge](https://img.shields.io/badge/pandas-2.1-darkblue)
 ![Static Badge](https://img.shields.io/badge/matplotlib-3.8-lightblue?color=blue)
 ![Static Badge](https://img.shields.io/badge/PEtaB-0.2.7-yellow)
 ![Static Badge](https://img.shields.io/badge/pyPESTO-0.4-red)
