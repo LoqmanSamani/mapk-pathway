@@ -5,6 +5,15 @@
 <sub>**Graphical abstract of the project**</sub>
 
 
+## Acknowledgments
+-----------------------------------------------------------------
+
+We ( Ines Schneider and Loghman Samani ) would like to express our gratitude to the following individuals who played a crucial role in this project:
+
+- [Prof. Dr. Nicole Radde](https://www.isa.uni-stuttgart.de/institut/team/Radde-00003/): Our esteemed professor, whose guidance and support were instrumental throughout the project. The project was conducted as part of her [Systems Theory in Systems Biology](https://www.ist.uni-stuttgart.de/teaching/lectures/2022ss/stsb/) course.
+
+- [M.Sc. Amatus Beyer](https://www.isa.uni-stuttgart.de/institut/team/Beyer-00005/): Our project guide, whose expertise and feedback significantly contributed to the development and improvement of our work. We appreciate his valuable insights and continuous support.
+
 
 ------------------------------------------------
 
@@ -82,6 +91,7 @@ Contained within this directory are both the comprehensive report (article) and 
 | └── `data`          | Subfolder contains the outcomes (numerical and plots) of the simulations.                                           |
 | `article`           | This folder contains a report on our work.                                                                          |
 ----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Copyright and Permissions
 
